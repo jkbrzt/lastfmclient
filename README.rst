@@ -47,8 +47,8 @@ Regular
     print resp
 
 
-Asynchronous (uses `tornado.httpclient.AsyncHTTPClient`)
---------------------------------------------------------
+Asynchronous (uses ``tornado.httpclient.AsyncHTTPClient``)
+----------------------------------------------------------
 
 .. code-block:: python
 
