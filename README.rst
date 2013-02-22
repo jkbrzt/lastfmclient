@@ -9,7 +9,7 @@ An async, Tornado-based version of the client is included as well.
 
 The client methods code and their docstrings are generated from the online API
 documentation (see ``./generate.py``, ``./spec.json`` and
-``./laastfm/generated``).
+``./laastfm/generated.py``).
 
 .. code-block:: python
 
