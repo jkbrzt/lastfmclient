@@ -4,7 +4,7 @@
 *Warning: pre-alpha quality, lack of tests and documentation.*
 
 Python client for `Last.fm API <http://www.last.fm/api>`_  that
-provides a pythonic interface to all the API's method, including OAuth, etc.
+provides a pythonic interface to all the API's method, including auth, etc.
 An async, Tornado-based version of the client is included as well.
 
 The client methods code and their docstrings are generated from the online API
