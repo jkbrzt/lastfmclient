@@ -1,3 +1,4 @@
+requests
+
 # Only needed for `make spec`.
 lxml
-requests

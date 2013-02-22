@@ -1,28 +1,13 @@
 ``laastfm``
 ###########
 
-Python client for `Last.fm API <http://www.last.fm/api>`_  that
-provides a pythonic interface to all the API's method, including auth, etc.
-An async, Tornado-based version of the client is included as well.
-
-The client methods code and their docstrings are generated from the online API
-documentation (see ``./generate.py``, ``./spec.json`` and
-``./laastfm/api.py``).
-
-.. code-block:: python
-
-    # http://ws.audioscrobbler.com/2.0/?method=track.updateNowPlaying&api_key=[…]
-    # ==>
-    api.track.update_now_playing(
-        track='Paranoid Android',
-        artist='Radiohead',
-        album='OK Computer',
-    )
+Python client for the `Last.fm API <http://www.last.fm/api>`_ with a
+pythonic interface. Also includes an async variant of the client for
+`Tornado<https://github.com/facebook/tornado>`_.
 
 
 Usage
 =====
-
 
 Regular
 -------
@@ -69,8 +54,18 @@ Asynchronous (uses ``tornado.httpclient.AsyncHTTPClient``)
         callback=callback,
     )
 
-Updating the generated client methods code
-==========================================
+See also `examples<https://github.com/jkbr/laastfm/tree/master/examples>`_.
+
+Client methods
+==============
+
+All the methods the Last.fm API provides are mirrored in the client with
+rich docstrings and arguments description. This code is actually generated
+directly from the online API documentation pages
+(see ``./generate.py``, ``./spec.json``, and ``./laastfm/api.py``).
+
+They defined methods be updated to the current version of the
+documentation via:
 
 .. code-block:: bash
 

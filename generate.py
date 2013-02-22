@@ -110,6 +110,8 @@ def generate_code(specfile='spec.json'):
     """Take a path to a spec file and generate the actual Python code."""
 
     spec = json.load(open(specfile))
+    del spec['__generated__']
+
     out = StringIO()
     out.write(u'# Generated code. Do not edit.\n')
     out.write(u'# %s\n' % now())
@@ -126,9 +128,6 @@ def generate_code(specfile='spec.json'):
     out.write(u'\n\n')
 
     for package in packages:
-
-        if package.startswith('__'):
-            continue
 
         out.write(u'class %s(Package):\n\n' % package.capitalize())
 
