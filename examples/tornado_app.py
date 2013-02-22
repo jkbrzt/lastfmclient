@@ -26,11 +26,13 @@ class LastfmHandler(tornado.web.RequestHandler):
             api_key=settings.API_KEY,
             api_secret=settings.API_SECRET,
         )
-        callback_url = client.get_auth_url('%s://%s/' % (
+
+        auth_url = client.get_auth_url(callback_url='%s://%s/' % (
             self.request.protocol,
-            self.request.host)
-        )
-        self.redirect(client.get_auth_url(callback_url))
+            self.request.host
+        ))
+
+        self.redirect(auth_url)
 
     @tornado.gen.engine
     @tornado.web.asynchronous
