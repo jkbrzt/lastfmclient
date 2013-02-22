@@ -1,14 +1,15 @@
 ``laastfm``
 ###########
 
-*Warning: pre-alpha quality; lack of documentation; might be renamed.*
+*Warning: pre-alpha quality, lack of tests and documentation.*
 
 Python client for `Last.fm API <http://www.last.fm/api>`_  that
 provides a pythonic interface to all the API's method, including OAuth, etc.
 An async, Tornado-based version of the client is included as well.
 
 The client methods code and their docstrings are generated from the online API
-documentation.
+documentation (see ``./generate.py``, ``./spec.json`` and
+``./laastfm/generated``).
 
 .. code-block:: python
 
@@ -74,6 +75,8 @@ Updating the generated client methods code
 ==========================================
 
 .. code-block:: bash
+
+    pip install -r requirements.txt
 
     # 1. Generate fresh spec.json from docs at http://www.last.fm/api:
     $ make spec

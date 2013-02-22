@@ -16,11 +16,11 @@ def now():
 
 def generate_spec(root='http://www.last.fm'):
     """
-    Generates spec.json containing description of all the endpoints listed
-    on http://www.last.fm/api/intro.
+    Generate structured JSON with description of all the endpoints
+    listed on http://www.last.fm/api/intro.
 
-    It crawlers the documentation and extracts resource names, parameter types,
-    etc from it to build the structure spec.json file.
+    It crawlers the documentation pages and extracts resource names,
+    parameter types, etc.
 
     """
 
@@ -107,7 +107,7 @@ def generate_spec(root='http://www.last.fm'):
 
 
 def generate_code(specfile='spec.json'):
-    """Takes a path to a spec file and generates the actual Python code."""
+    """Take a path to a spec file and generate the actual Python code."""
 
     spec = json.load(open(specfile))
     out = StringIO()
