@@ -3,7 +3,7 @@
 
 Python client for the `Last.fm API <http://www.last.fm/api>`_ with a
 pythonic interface. Also includes an async variant of the client for
-`Tornado<https://github.com/facebook/tornado>`_.
+`Tornado <https://github.com/facebook/tornado>`_.
 
 
 Usage
@@ -54,7 +54,7 @@ Asynchronous (uses ``tornado.httpclient.AsyncHTTPClient``)
         callback=callback,
     )
 
-See also `examples<https://github.com/jkbr/laastfm/tree/master/examples>`_.
+See also `examples <https://github.com/jkbr/laastfm/tree/master/examples>`_.
 
 Client methods
 ==============
