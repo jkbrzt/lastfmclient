@@ -106,7 +106,7 @@ def generate_spec(root='http://www.last.fm'):
     print json.dumps(spec, indent=4, sort_keys=True)
 
 
-def generate_code(specfile='spec.json'):
+def generate_code(specfile='api.json'):
     """Take a path to a spec file and generate the actual Python code."""
 
     spec = json.load(open(specfile))

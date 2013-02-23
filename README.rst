@@ -62,20 +62,15 @@ Client methods
 All the methods the Last.fm API provides are mirrored in the client with
 rich docstrings and arguments description. This code is actually generated
 directly from the online API documentation pages
-(see ``./generate.py``, ``./spec.json``, and ``./laastfm/api.py``).
+(see ``./generate.py``, ``./api.json``, and ``./laastfm/api.py``).
 
-They defined methods be updated to the current version of the
-documentation via:
+The defined methods be updated to the current version of the documentation via:
 
 .. code-block:: bash
-
     pip install -r requirements.txt
-
-    # 1. Generate fresh spec.json from docs at http://www.last.fm/api:
+    # 1. Generate fresh api.json from docs at http://www.last.fm/api:
     $ make spec
-
-    # 2. Generate `lastfm/api.py` from `spec.json`:
+    # 2. Generate `lastfm/api.py` from `api.json`:
     $ make code
-
-    # Or, the above in one step:
+    # Or, all the above in one step:
     $ make

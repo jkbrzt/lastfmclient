@@ -1,0 +1,3654 @@
+{
+    "__generated__": "2013-02-22T23:44:14.542068Z",
+    "album": {
+        "addTags": {
+            "auth": true,
+            "description": "Tag an album using a list of user supplied tags.",
+            "documentation": "http://www.last.fm/api/show/album.addTags",
+            "http": "POST",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "(Required) : The album name",
+                    "multiple": false,
+                    "required": true
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "tags": {
+                    "boolean": false,
+                    "description": "(Required) : A comma delimited list of user supplied tags to apply to this album. Accepts a maximum of 10 tags.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getBuylinks": {
+            "auth": false,
+            "description": "Get a list of Buy Links for a particular Album. It is required that you supply either the artist and track params or the mbid param.",
+            "documentation": "http://www.last.fm/api/show/album.getBuylinks",
+            "http": "GET",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The album",
+                    "multiple": false,
+                    "required": true
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "country": {
+                    "boolean": false,
+                    "description": "(Required) : A country name or two character country code, as defined by the ISO 3166-1 country names standard.",
+                    "multiple": false,
+                    "required": true
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the album",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getInfo": {
+            "auth": false,
+            "description": "Get the metadata and tracklist for an album on Last.fm using the album name or a musicbrainz id.",
+            "documentation": "http://www.last.fm/api/show/album.getInfo",
+            "http": "GET",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The album name",
+                    "multiple": false,
+                    "required": true
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "lang": {
+                    "boolean": false,
+                    "description": "(Optional) : The language to return the biography in, expressed as an ISO 639 alpha-2 code.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the album",
+                    "multiple": false,
+                    "required": false
+                },
+                "username": {
+                    "boolean": false,
+                    "description": "(Optional) : The username for the context of the request. If supplied, the user's playcount for this album is included in the response.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getShouts": {
+            "auth": false,
+            "description": "Get shouts for this album. Also available as an rss feed.",
+            "documentation": "http://www.last.fm/api/show/album.getShouts",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTags": {
+            "auth": false,
+            "description": "Get the tags applied by an individual user to an album on Last.fm. To retrieve the list of top tags applied to an album by all users use album.getTopTags.",
+            "documentation": "http://www.last.fm/api/show/album.getTags",
+            "http": "GET",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The album name",
+                    "multiple": false,
+                    "required": true
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the album",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Optional) : If called in non-authenticated mode you must specify the user to look up",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTopTags": {
+            "auth": false,
+            "description": "Get the top tags for an album on Last.fm, ordered by popularity.",
+            "documentation": "http://www.last.fm/api/show/album.getTopTags",
+            "http": "GET",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The album name",
+                    "multiple": false,
+                    "required": true
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the album",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "removeTag": {
+            "auth": true,
+            "description": "Remove a user's tag from an album.",
+            "documentation": "http://www.last.fm/api/show/album.removeTag",
+            "http": "POST",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "(Required) : The album name",
+                    "multiple": false,
+                    "required": true
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "tag": {
+                    "boolean": false,
+                    "description": "(Required) : A single user tag to remove from this album.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "search": {
+            "auth": false,
+            "description": "Search for an album by name. Returns album matches sorted by relevance.",
+            "documentation": "http://www.last.fm/api/show/album.search",
+            "http": "GET",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "(Required) : The album name",
+                    "multiple": false,
+                    "required": true
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 30.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "share": {
+            "auth": true,
+            "description": "Share an album with one or more Last.fm users or other friends.",
+            "documentation": "http://www.last.fm/api/show/album.share",
+            "http": "POST",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "(Required) : An album name.",
+                    "multiple": false,
+                    "required": true
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : An artist name.",
+                    "multiple": false,
+                    "required": true
+                },
+                "message": {
+                    "boolean": false,
+                    "description": "(Optional): An optional message to send with the recommendation. If not supplied a default message will be used.",
+                    "multiple": false,
+                    "required": false
+                },
+                "public": {
+                    "boolean": false,
+                    "description": "(Optional): Optionally show in the sharing users activity feed. Defaults to 0 (false).",
+                    "multiple": false,
+                    "required": false
+                },
+                "recipient": {
+                    "boolean": false,
+                    "description": "(Required): Email Address | Last.fm Username - A comma delimited list of email addresses or Last.fm usernames. Maximum is 10.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        }
+    },
+    "artist": {
+        "addTags": {
+            "auth": true,
+            "description": "Tag an artist with one or more user supplied tags.",
+            "documentation": "http://www.last.fm/api/show/artist.addTags",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "tags": {
+                    "boolean": false,
+                    "description": "(Required) : A comma delimited list of user supplied tags to apply to this artist. Accepts a maximum of 10 tags.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getCorrection": {
+            "auth": false,
+            "description": "Use the last.fm corrections data to check whether the supplied artist has a correction to a canonical artist",
+            "documentation": "http://www.last.fm/api/show/artist.getCorrection",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name to correct.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getEvents": {
+            "auth": false,
+            "description": "Get a list of upcoming events for this artist. Easily integratable into calendars, using the ical standard (see feeds section below).",
+            "documentation": "http://www.last.fm/api/show/artist.getEvents",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "festivalsonly": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Whether only festivals should be returned, or all events.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optiona) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getInfo": {
+            "auth": false,
+            "description": "Get the metadata for an artist. Includes biography, truncated at 300 characters.",
+            "documentation": "http://www.last.fm/api/show/artist.getInfo",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "lang": {
+                    "boolean": false,
+                    "description": "(Optional) : The language to return the biography in, expressed as an ISO 639 alpha-2 code.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                },
+                "username": {
+                    "boolean": false,
+                    "description": "(Optional) : The username for the context of the request. If supplied, the user's playcount for this artist is included in the response.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getPastEvents": {
+            "auth": false,
+            "description": "Get a paginated list of all the events this artist has played at in the past.",
+            "documentation": "http://www.last.fm/api/show/artist.getPastEvents",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] :The name of the artist you would like to fetch event listings for.",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) :The page of results to return.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getPodcast": {
+            "auth": false,
+            "description": "Get a podcast of free mp3s based on an artist",
+            "documentation": "http://www.last.fm/api/show/artist.getPodcast",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getShouts": {
+            "auth": false,
+            "description": "Get shouts for this artist. Also available as an rss feed.",
+            "documentation": "http://www.last.fm/api/show/artist.getShouts",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getSimilar": {
+            "auth": false,
+            "description": "Get all the artists similar to this artist",
+            "documentation": "http://www.last.fm/api/show/artist.getSimilar",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : Limit the number of similar artists returned",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTags": {
+            "auth": false,
+            "description": "Get the tags applied by an individual user to an artist on Last.fm. If accessed as an authenticated service /and/ you don't supply a user parameter then this service will return tags for the authenticated user. To retrieve the list of top tags applied to an artist by all users use artist.getTopTags.",
+            "documentation": "http://www.last.fm/api/show/artist.getTags",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Optional) : If called in non-authenticated mode you must specify the user to look up",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTopAlbums": {
+            "auth": false,
+            "description": "Get the top albums for an artist on Last.fm, ordered by popularity.",
+            "documentation": "http://www.last.fm/api/show/artist.getTopAlbums",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTopFans": {
+            "auth": false,
+            "description": "Get the top fans for an artist on Last.fm, based on listening data.",
+            "documentation": "http://www.last.fm/api/show/artist.getTopFans",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTopTags": {
+            "auth": false,
+            "description": "Get the top tags for an artist on Last.fm, ordered by popularity.",
+            "documentation": "http://www.last.fm/api/show/artist.getTopTags",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTopTracks": {
+            "auth": false,
+            "description": "Get the top tracks by an artist on Last.fm, ordered by popularity",
+            "documentation": "http://www.last.fm/api/show/artist.getTopTracks",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist names into correct artist names, returning the correct version instead. The corrected artist name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the artist",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "removeTag": {
+            "auth": true,
+            "description": "Remove a user's tag from an artist.",
+            "documentation": "http://www.last.fm/api/show/artist.removeTag",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "tag": {
+                    "boolean": false,
+                    "description": "(Required) : A single user tag to remove from this artist.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "search": {
+            "auth": false,
+            "description": "Search for an artist by name. Returns artist matches sorted by relevance.",
+            "documentation": "http://www.last.fm/api/show/artist.search",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 30.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "share": {
+            "auth": true,
+            "description": "Share an artist with Last.fm users or other friends.",
+            "documentation": "http://www.last.fm/api/show/artist.share",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist to share.",
+                    "multiple": false,
+                    "required": true
+                },
+                "message": {
+                    "boolean": false,
+                    "description": "(Optional): An optional message to send with the recommendation. If not supplied a default message will be used.",
+                    "multiple": false,
+                    "required": false
+                },
+                "public": {
+                    "boolean": false,
+                    "description": "(Optional): Optionally show in the sharing users activity feed. Defaults to 0 (false).",
+                    "multiple": false,
+                    "required": false
+                },
+                "recipient": {
+                    "boolean": false,
+                    "description": "(Required): Email Address | Last.fm Username - A comma delimited list of email addresses or Last.fm usernames. Maximum is 10.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "shout": {
+            "auth": true,
+            "description": "Shout in this artist's shoutbox",
+            "documentation": "http://www.last.fm/api/show/artist.shout",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The name of the artist to shout on.",
+                    "multiple": false,
+                    "required": true
+                },
+                "message": {
+                    "boolean": false,
+                    "description": "(Required) : The message to post to the shoutbox.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        }
+    },
+    "auth": {
+        "getMobileSession": {
+            "auth": false,
+            "description": "Create a web service session for a user. Used for authenticating a user when the password can be inputted by the user. Only suitable for standalone mobile devices. See the authentication how-to for more. You must use HTTPS and POST in order to use this method.",
+            "documentation": "http://www.last.fm/api/show/auth.getMobileSession",
+            "http": "GET",
+            "params": {
+                "password": {
+                    "boolean": false,
+                    "description": "(Required) : The password in plain text.",
+                    "multiple": false,
+                    "required": true
+                },
+                "username": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm username.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getSession": {
+            "auth": false,
+            "description": "Fetch a session key for a user. The third step in the authentication process. See the authentication how-to for more information.",
+            "documentation": "http://www.last.fm/api/show/auth.getSession",
+            "http": "GET",
+            "params": {
+                "token": {
+                    "boolean": false,
+                    "description": "(Required) : A 32-character ASCII hexadecimal MD5 hash returned by step 1 of the authentication process (following the granting of permissions to the application by the user)",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getToken": {
+            "auth": false,
+            "description": "Fetch an unathorized request token for an API account. This is step 2 of the authentication process for desktop applications. Web applications do not need to use this service.",
+            "documentation": "http://www.last.fm/api/show/auth.getToken",
+            "http": "GET",
+            "params": {}
+        }
+    },
+    "chart": {
+        "getHypedArtists": {
+            "auth": false,
+            "description": "Get the hyped artists chart",
+            "documentation": "http://www.last.fm/api/show/chart.getHypedArtists",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getHypedTracks": {
+            "auth": false,
+            "description": "Get the top artists chart",
+            "documentation": "http://www.last.fm/api/show/chart.getHypedTracks",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getLovedTracks": {
+            "auth": false,
+            "description": "Get the most loved tracks chart",
+            "documentation": "http://www.last.fm/api/show/chart.getLovedTracks",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTopArtists": {
+            "auth": false,
+            "description": "Get the top artists chart",
+            "documentation": "http://www.last.fm/api/show/chart.getTopArtists",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTopTags": {
+            "auth": false,
+            "description": "Get the top artists chart",
+            "documentation": "http://www.last.fm/api/show/chart.getTopTags",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTopTracks": {
+            "auth": false,
+            "description": "Get the top tracks chart",
+            "documentation": "http://www.last.fm/api/show/chart.getTopTracks",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        }
+    },
+    "event": {
+        "attend": {
+            "auth": true,
+            "description": "Set a user's attendance status for an event.",
+            "documentation": "http://www.last.fm/api/show/event.attend",
+            "http": "POST",
+            "params": {
+                "event": {
+                    "boolean": false,
+                    "description": "(Required) : The numeric last.fm event id",
+                    "multiple": false,
+                    "required": true
+                },
+                "status": {
+                    "boolean": false,
+                    "description": "(Required) : The attendance status (0=Attending, 1=Maybe attending, 2=Not attending)",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getAttendees": {
+            "auth": false,
+            "description": "Get a list of attendees for an event.",
+            "documentation": "http://www.last.fm/api/show/event.getAttendees",
+            "http": "GET",
+            "params": {
+                "event": {
+                    "boolean": false,
+                    "description": "(Required) : The numeric last.fm event id",
+                    "multiple": false,
+                    "required": true
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optiona) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getInfo": {
+            "auth": false,
+            "description": "Get the metadata for an event on Last.fm. Includes attendance and lineup information.",
+            "documentation": "http://www.last.fm/api/show/event.getInfo",
+            "http": "GET",
+            "params": {
+                "event": {
+                    "boolean": false,
+                    "description": "(Required) : The numeric last.fm event id",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getShouts": {
+            "auth": false,
+            "description": "Get shouts for this event. Also available as an rss feed.",
+            "documentation": "http://www.last.fm/api/show/event.getShouts",
+            "http": "GET",
+            "params": {
+                "event": {
+                    "boolean": false,
+                    "description": "(Required) : The numeric last.fm event id",
+                    "multiple": false,
+                    "required": true
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "share": {
+            "auth": true,
+            "description": "Share an event with one or more Last.fm users or other friends.",
+            "documentation": "http://www.last.fm/api/show/event.share",
+            "http": "POST",
+            "params": {
+                "event": {
+                    "boolean": false,
+                    "description": "(Required) : An event ID",
+                    "multiple": false,
+                    "required": true
+                },
+                "message": {
+                    "boolean": false,
+                    "description": "(Optional): An optional message to send with the recommendation. If not supplied a default message will be used.",
+                    "multiple": false,
+                    "required": false
+                },
+                "public": {
+                    "boolean": false,
+                    "description": "(Optional): Optionally show the share in the sharing users recent activity. Defaults to 0 (false).",
+                    "multiple": false,
+                    "required": false
+                },
+                "recipient": {
+                    "boolean": false,
+                    "description": "(Required): Email Address | Last.fm Username - A comma delimited list of email addresses or Last.fm usernames. Maximum is 10.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "shout": {
+            "auth": true,
+            "description": "Shout in this event's shoutbox",
+            "documentation": "http://www.last.fm/api/show/event.shout",
+            "http": "POST",
+            "params": {
+                "event": {
+                    "boolean": false,
+                    "description": "(Required) : The id of the event to shout on",
+                    "multiple": false,
+                    "required": true
+                },
+                "message": {
+                    "boolean": false,
+                    "description": "(Required) : The message to post to the shoutbox",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        }
+    },
+    "geo": {
+        "getEvents": {
+            "auth": false,
+            "description": "Get all events in a specific location by country or city name.",
+            "documentation": "http://www.last.fm/api/show/geo.getEvents",
+            "http": "GET",
+            "params": {
+                "distance": {
+                    "boolean": false,
+                    "description": "(Optional) : Find events within a specified radius (in kilometres)",
+                    "multiple": false,
+                    "required": false
+                },
+                "festivalsonly": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Whether only festivals should be returned, or all events.",
+                    "multiple": false,
+                    "required": false
+                },
+                "lat": {
+                    "boolean": false,
+                    "description": "(Optional) : Specifies a latitude value to retrieve events for (service returns nearby events by default)",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 10.",
+                    "multiple": false,
+                    "required": false
+                },
+                "location": {
+                    "boolean": false,
+                    "description": "(Optional) : Specifies a location to retrieve events for (service returns nearby events by default)",
+                    "multiple": false,
+                    "required": false
+                },
+                "long": {
+                    "boolean": false,
+                    "description": "(Optional) : Specifies a longitude value to retrieve events for (service returns nearby events by default)",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "tag": {
+                    "boolean": false,
+                    "description": "(Optional) : Specifies a tag to filter by.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getMetroArtistChart": {
+            "auth": false,
+            "description": "Get a chart of artists for a metro",
+            "documentation": "http://www.last.fm/api/show/geo.getMetroArtistChart",
+            "http": "GET",
+            "params": {
+                "country": {
+                    "boolean": false,
+                    "description": "(Required) : A country name, as defined by the ISO 3166-1 country names standard",
+                    "multiple": false,
+                    "required": true
+                },
+                "end": {
+                    "boolean": false,
+                    "description": "(Optional) : Ending timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "metro": {
+                    "boolean": false,
+                    "description": "(Required) : The metro's name",
+                    "multiple": false,
+                    "required": true
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "start": {
+                    "boolean": false,
+                    "description": "(Optional) : Beginning timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getMetroHypeArtistChart": {
+            "auth": false,
+            "description": "Get a chart of hyped (up and coming) artists for a metro",
+            "documentation": "http://www.last.fm/api/show/geo.getMetroHypeArtistChart",
+            "http": "GET",
+            "params": {
+                "country": {
+                    "boolean": false,
+                    "description": "(Required) : A country name, as defined by the ISO 3166-1 country names standard",
+                    "multiple": false,
+                    "required": true
+                },
+                "end": {
+                    "boolean": false,
+                    "description": "(Optional) : Ending timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "metro": {
+                    "boolean": false,
+                    "description": "(Required) : The metro's name",
+                    "multiple": false,
+                    "required": true
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "start": {
+                    "boolean": false,
+                    "description": "(Optional) : Beginning timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getMetroHypeTrackChart": {
+            "auth": false,
+            "description": "Get a chart of tracks for a metro",
+            "documentation": "http://www.last.fm/api/show/geo.getMetroHypeTrackChart",
+            "http": "GET",
+            "params": {
+                "country": {
+                    "boolean": false,
+                    "description": "(Required) : A country name, as defined by the ISO 3166-1 country names standard",
+                    "multiple": false,
+                    "required": true
+                },
+                "end": {
+                    "boolean": false,
+                    "description": "(Optional) : Ending timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "metro": {
+                    "boolean": false,
+                    "description": "(Required) : The metro's name",
+                    "multiple": false,
+                    "required": true
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "start": {
+                    "boolean": false,
+                    "description": "(Optional) : Beginning timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getMetroTrackChart": {
+            "auth": false,
+            "description": "Get a chart of tracks for a metro",
+            "documentation": "http://www.last.fm/api/show/geo.getMetroTrackChart",
+            "http": "GET",
+            "params": {
+                "country": {
+                    "boolean": false,
+                    "description": "(Required) : A country name, as defined by the ISO 3166-1 country names standard",
+                    "multiple": false,
+                    "required": true
+                },
+                "end": {
+                    "boolean": false,
+                    "description": "(Optional) : Ending timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "metro": {
+                    "boolean": false,
+                    "description": "(Required) : The metro's name",
+                    "multiple": false,
+                    "required": true
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "start": {
+                    "boolean": false,
+                    "description": "(Optional) : Beginning timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getMetroUniqueArtistChart": {
+            "auth": false,
+            "description": "Get a chart of the artists which make that metro unique",
+            "documentation": "http://www.last.fm/api/show/geo.getMetroUniqueArtistChart",
+            "http": "GET",
+            "params": {
+                "country": {
+                    "boolean": false,
+                    "description": "(Required) : A country name, as defined by the ISO 3166-1 country names standard",
+                    "multiple": false,
+                    "required": true
+                },
+                "end": {
+                    "boolean": false,
+                    "description": "(Optional) : Ending timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "metro": {
+                    "boolean": false,
+                    "description": "(Required) : The metro's name",
+                    "multiple": false,
+                    "required": true
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "start": {
+                    "boolean": false,
+                    "description": "(Optional) : Beginning timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getMetroUniqueTrackChart": {
+            "auth": false,
+            "description": "Get a chart of tracks for a metro",
+            "documentation": "http://www.last.fm/api/show/geo.getMetroUniqueTrackChart",
+            "http": "GET",
+            "params": {
+                "country": {
+                    "boolean": false,
+                    "description": "(Required) : A country name, as defined by the ISO 3166-1 country names standard",
+                    "multiple": false,
+                    "required": true
+                },
+                "end": {
+                    "boolean": false,
+                    "description": "(Optional) : Ending timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "metro": {
+                    "boolean": false,
+                    "description": "(Required) : The metro's name",
+                    "multiple": false,
+                    "required": true
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "start": {
+                    "boolean": false,
+                    "description": "(Optional) : Beginning timestamp of the weekly range requested (c.f. geo.getWeeklyChartlist)",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getMetroWeeklyChartlist": {
+            "auth": false,
+            "description": "Get a list of available chart periods for this metro, expressed as date ranges which can be sent to the chart services.",
+            "documentation": "http://www.last.fm/api/show/geo.getMetroWeeklyChartlist",
+            "http": "GET",
+            "params": {
+                "metro": {
+                    "boolean": false,
+                    "description": ": The metro name to fetch the charts list for.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getMetros": {
+            "auth": false,
+            "description": "Get a list of valid countries and metros for use in the other webservices",
+            "documentation": "http://www.last.fm/api/show/geo.getMetros",
+            "http": "GET",
+            "params": {
+                "country": {
+                    "boolean": false,
+                    "description": "(Optional) : Optionally restrict the results to those Metros from a particular country, as defined by the ISO 3166-1 country names standard",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTopArtists": {
+            "auth": false,
+            "description": "Get the most popular artists on Last.fm by country",
+            "documentation": "http://www.last.fm/api/show/geo.getTopArtists",
+            "http": "GET",
+            "params": {
+                "country": {
+                    "boolean": false,
+                    "description": "(Required) : A country name, as defined by the ISO 3166-1 country names standard",
+                    "multiple": false,
+                    "required": true
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTopTracks": {
+            "auth": false,
+            "description": "Get the most popular tracks on Last.fm last week by country",
+            "documentation": "http://www.last.fm/api/show/geo.getTopTracks",
+            "http": "GET",
+            "params": {
+                "country": {
+                    "boolean": false,
+                    "description": "(Required) : A country name, as defined by the ISO 3166-1 country names standard",
+                    "multiple": false,
+                    "required": true
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "location": {
+                    "boolean": false,
+                    "description": "(Optional) : A metro name, to fetch the charts for (must be within the country specified)",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        }
+    },
+    "group": {
+        "getHype": {
+            "auth": false,
+            "description": "Get the hype list for a group",
+            "documentation": "http://www.last.fm/api/show/group.getHype",
+            "http": "GET",
+            "params": {
+                "Group": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm group name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getMembers": {
+            "auth": false,
+            "description": "Get a list of members for this group.",
+            "documentation": "http://www.last.fm/api/show/group.getMembers",
+            "http": "GET",
+            "params": {
+                "group": {
+                    "boolean": false,
+                    "description": "(Required) : The group name to fetch the members of.",
+                    "multiple": false,
+                    "required": true
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The results page you would like to fetch",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getWeeklyAlbumChart": {
+            "auth": false,
+            "description": "Get an album chart for a group, for a given date range. If no date range is supplied, it will return the most recent album chart for this group.",
+            "documentation": "http://www.last.fm/api/show/group.getWeeklyAlbumChart",
+            "http": "GET",
+            "params": {
+                "from": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should start from. See Group.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                },
+                "group": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm group name to fetch the charts of.",
+                    "multiple": false,
+                    "required": true
+                },
+                "to": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should end on. See Group.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getWeeklyArtistChart": {
+            "auth": false,
+            "description": "Get an artist chart for a group, for a given date range. If no date range is supplied, it will return the most recent album chart for this group.",
+            "documentation": "http://www.last.fm/api/show/group.getWeeklyArtistChart",
+            "http": "GET",
+            "params": {
+                "from": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should start from. See Group.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                },
+                "group": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm group name to fetch the charts of.",
+                    "multiple": false,
+                    "required": true
+                },
+                "to": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should end on. See Group.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getWeeklyChartList": {
+            "auth": false,
+            "description": "Get a list of available charts for this group, expressed as date ranges which can be sent to the chart services.",
+            "documentation": "http://www.last.fm/api/show/group.getWeeklyChartList",
+            "http": "GET",
+            "params": {
+                "group": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm group name to fetch the charts list for.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getWeeklyTrackChart": {
+            "auth": false,
+            "description": "Get a track chart for a group, for a given date range. If no date range is supplied, it will return the most recent album chart for this group.",
+            "documentation": "http://www.last.fm/api/show/group.getWeeklyTrackChart",
+            "http": "GET",
+            "params": {
+                "from": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should start from. See Group.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                },
+                "group": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm group name to fetch the charts of.",
+                    "multiple": false,
+                    "required": true
+                },
+                "to": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should end on. See Group.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        }
+    },
+    "library": {
+        "addAlbum": {
+            "auth": true,
+            "description": "Add an album or collection of albums to a user's Last.fm library",
+            "documentation": "http://www.last.fm/api/show/library.addAlbum",
+            "http": "POST",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "[i] (Required) : The album or collection of albums that you wish to add. The indices of the albums that you pass MUST correspond to those of the artists.",
+                    "multiple": true,
+                    "required": true
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "[i] (Required) : The artist or collection of artists that you wish to add.",
+                    "multiple": true,
+                    "required": true
+                }
+            }
+        },
+        "addArtist": {
+            "auth": true,
+            "description": "Add an artist to a user's Last.fm library",
+            "documentation": "http://www.last.fm/api/show/library.addArtist",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "[i] (Required) : The artist or collection of artists you wish to add.",
+                    "multiple": true,
+                    "required": true
+                }
+            }
+        },
+        "addTrack": {
+            "auth": true,
+            "description": "Add a track to a user's Last.fm library",
+            "documentation": "http://www.last.fm/api/show/library.addTrack",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist that composed the track",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : The track name you wish to add",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getAlbums": {
+            "auth": false,
+            "description": "A paginated list of all the albums in a user's library, with play counts and tag counts.",
+            "documentation": "http://www.last.fm/api/show/library.getAlbums",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Optional) : An artist by which to filter tracks",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number you wish to scan to.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The user whose library you want to fetch.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getArtists": {
+            "auth": false,
+            "description": "A paginated list of all the artists in a user's library, with play counts and tag counts.",
+            "documentation": "http://www.last.fm/api/show/library.getArtists",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number you wish to scan to.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The user whose library you want to fetch.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getTracks": {
+            "auth": false,
+            "description": "A paginated list of all the tracks in a user's library, with play counts and tag counts.",
+            "documentation": "http://www.last.fm/api/show/library.getTracks",
+            "http": "GET",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "(Optional) : An album by which to filter tracks (needs an artist)",
+                    "multiple": false,
+                    "required": false
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "(Optional) : An artist by which to filter tracks",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number you wish to scan to.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The user whose library you want to fetch.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "removeAlbum": {
+            "auth": true,
+            "description": "Remove an album from a user's Last.fm library",
+            "documentation": "http://www.last.fm/api/show/library.removeAlbum",
+            "http": "POST",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "(Required) : The name of the album you wish to remove",
+                    "multiple": false,
+                    "required": true
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist that composed the album",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "removeArtist": {
+            "auth": true,
+            "description": "Remove an artist from a user's Last.fm library",
+            "documentation": "http://www.last.fm/api/show/library.removeArtist",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name you wish to remove",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "removeScrobble": {
+            "auth": true,
+            "description": "Remove a scrobble from a user's Last.fm library",
+            "documentation": "http://www.last.fm/api/show/library.removeScrobble",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist that composed the track",
+                    "multiple": false,
+                    "required": true
+                },
+                "timestamp": {
+                    "boolean": false,
+                    "description": "(Required) : The unix timestamp of the scrobble that you wish to remove",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : The name of the track",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "removeTrack": {
+            "auth": true,
+            "description": "Remove a track from a user's Last.fm library",
+            "documentation": "http://www.last.fm/api/show/library.removeTrack",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist that composed the track",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : The name of the track that you wish to remove",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        }
+    },
+    "playlist": {
+        "addTrack": {
+            "auth": true,
+            "description": "Add a track to a Last.fm user's playlist",
+            "documentation": "http://www.last.fm/api/show/playlist.addTrack",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name that corresponds to the track to be added.",
+                    "multiple": false,
+                    "required": true
+                },
+                "playlistID": {
+                    "boolean": false,
+                    "description": "(Required) : The ID of the playlist - this is available in user.getPlaylists.",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : The track name to add to the playlist.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "create": {
+            "auth": true,
+            "description": "Create a Last.fm playlist on behalf of a user",
+            "documentation": "http://www.last.fm/api/show/playlist.create",
+            "http": "POST",
+            "params": {
+                "description": {
+                    "boolean": false,
+                    "description": "(Optional) : Description for the playlist",
+                    "multiple": false,
+                    "required": false
+                },
+                "title": {
+                    "boolean": false,
+                    "description": "(Optional) : Title for the playlist",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        }
+    },
+    "radio": {
+        "getPlaylist": {
+            "auth": true,
+            "description": "Fetch new radio content periodically in an XSPF format.",
+            "documentation": "http://www.last.fm/api/show/radio.getPlaylist",
+            "http": "GET",
+            "params": {
+                "bitrate": {
+                    "boolean": false,
+                    "description": "(Optional) : What bitrate to stream content at, in kbps (supported bitrates are 64 and 128)",
+                    "multiple": false,
+                    "required": false
+                },
+                "buylinks": {
+                    "boolean": false,
+                    "description": "(Optional) : Whether the response should contain links for purchase/download, if available (default false)",
+                    "multiple": false,
+                    "required": false
+                },
+                "discovery": {
+                    "boolean": false,
+                    "description": "(Optional) : Whether to request last.fm content with discovery mode switched on.",
+                    "multiple": false,
+                    "required": false
+                },
+                "rtp": {
+                    "boolean": false,
+                    "description": "(Optional) : Whether the user is scrobbling or not during this radio session (helps content generation)",
+                    "multiple": false,
+                    "required": false
+                },
+                "speed_multiplier": {
+                    "boolean": false,
+                    "description": "(Optional) : The rate at which to provide the stream (supported multipliers are 1.0 and 2.0)",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "search": {
+            "auth": false,
+            "description": "Resolve the name of a resource into a station depending on which resource it is most likely to represent",
+            "documentation": "http://www.last.fm/api/show/radio.search",
+            "http": "GET",
+            "params": {
+                "name": {
+                    "boolean": false,
+                    "description": "(Required) : The tag or artist to resolve",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "tune": {
+            "auth": true,
+            "description": "Tune in to a Last.fm radio station.",
+            "documentation": "http://www.last.fm/api/show/radio.tune",
+            "http": "POST",
+            "params": {
+                "lang": {
+                    "boolean": false,
+                    "description": "(Optional) : An ISO language code to determine the language to return the station name in, expressed as an ISO 639 alpha-2 code.",
+                    "multiple": false,
+                    "required": false
+                },
+                "station": {
+                    "boolean": false,
+                    "description": "(Required) : A lastfm:// radio URL",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        }
+    },
+    "tag": {
+        "getInfo": {
+            "auth": false,
+            "description": "Get the metadata for a tag",
+            "documentation": "http://www.last.fm/api/show/tag.getInfo",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "lang": {
+                    "boolean": false,
+                    "description": "(Optional) : The language to return the biography in, expressed as an ISO 639 alpha-2 code.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getSimilar": {
+            "auth": false,
+            "description": "Search for tags similar to this one. Returns tags ranked by similarity, based on listening data.",
+            "documentation": "http://www.last.fm/api/show/tag.getSimilar",
+            "http": "GET",
+            "params": {
+                "tag": {
+                    "boolean": false,
+                    "description": "(Required) : The tag name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getTopAlbums": {
+            "auth": false,
+            "description": "Get the top albums tagged by this tag, ordered by tag count.",
+            "documentation": "http://www.last.fm/api/show/tag.getTopAlbums",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "tag": {
+                    "boolean": false,
+                    "description": "(Required) : The tag name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getTopArtists": {
+            "auth": false,
+            "description": "Get the top artists tagged by this tag, ordered by tag count.",
+            "documentation": "http://www.last.fm/api/show/tag.getTopArtists",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "tag": {
+                    "boolean": false,
+                    "description": "(Required) : The tag name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getTopTags": {
+            "auth": false,
+            "description": "Fetches the top global tags on Last.fm, sorted by popularity (number of times used)",
+            "documentation": "http://www.last.fm/api/show/tag.getTopTags",
+            "http": "GET",
+            "params": {}
+        },
+        "getTopTracks": {
+            "auth": false,
+            "description": "Get the top tracks tagged by this tag, ordered by tag count.",
+            "documentation": "http://www.last.fm/api/show/tag.getTopTracks",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "tag": {
+                    "boolean": false,
+                    "description": "(Required) : The tag name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getWeeklyArtistChart": {
+            "auth": false,
+            "description": "Get an artist chart for a tag, for a given date range. If no date range is supplied, it will return the most recent artist chart for this tag.",
+            "documentation": "http://www.last.fm/api/show/tag.getWeeklyArtistChart",
+            "http": "GET",
+            "params": {
+                "from": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should start from. See Tag.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "tag": {
+                    "boolean": false,
+                    "description": "(Required) : The tag name",
+                    "multiple": false,
+                    "required": true
+                },
+                "to": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should end on. See Tag.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getWeeklyChartList": {
+            "auth": false,
+            "description": "Get a list of available charts for this tag, expressed as date ranges which can be sent to the chart services.",
+            "documentation": "http://www.last.fm/api/show/tag.getWeeklyChartList",
+            "http": "GET",
+            "params": {
+                "tag": {
+                    "boolean": false,
+                    "description": "(Required) : The tag name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "search": {
+            "auth": false,
+            "description": "Search for a tag by name. Returns matches sorted by relevance.",
+            "documentation": "http://www.last.fm/api/show/tag.search",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 30.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "tag": {
+                    "boolean": false,
+                    "description": "(Required) : The tag name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        }
+    },
+    "tasteometer": {
+        "compare": {
+            "auth": false,
+            "description": "Get a Tasteometer score from two inputs, along with a list of shared artists. If the input is a User some additional information is returned.",
+            "documentation": "http://www.last.fm/api/show/tasteometer.compare",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional, default = 5) : How many shared artists to display",
+                    "multiple": false,
+                    "required": false
+                },
+                "type": {
+                    "boolean": false,
+                    "description": "[1|2] (Required x 2) : 'user' | 'artists'",
+                    "multiple": true,
+                    "required": true
+                },
+                "value": {
+                    "boolean": false,
+                    "description": "[1|2] (Required x 2) : [Last.fm username] | [Comma-separated artist names (max. 100)]",
+                    "multiple": true,
+                    "required": true
+                }
+            }
+        },
+        "compareGroup": {
+            "auth": false,
+            "description": "This service has been deprecated and is no longer available.",
+            "documentation": "http://www.last.fm/api/show/tasteometer.compareGroup",
+            "http": "GET",
+            "params": {}
+        }
+    },
+    "track": {
+        "addTags": {
+            "auth": true,
+            "description": "Tag an album using a list of user supplied tags.",
+            "documentation": "http://www.last.fm/api/show/track.addTags",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "tags": {
+                    "boolean": false,
+                    "description": "(Required) : A comma delimited list of user supplied tags to apply to this track. Accepts a maximum of 10 tags.",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : The track name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "ban": {
+            "auth": true,
+            "description": "Ban a track for a given user profile.",
+            "documentation": "http://www.last.fm/api/show/track.ban",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : An artist name (utf8 encoded)",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : A track name (utf8 encoded)",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getBuylinks": {
+            "auth": false,
+            "description": "Get a list of Buy Links for a particular Track. It is required that you supply either the artist and track params or the mbid param.",
+            "documentation": "http://www.last.fm/api/show/track.getBuylinks",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "country": {
+                    "boolean": false,
+                    "description": "(Required) : A country name or two character country code, as defined by the ISO 3166-1 country names standard.",
+                    "multiple": false,
+                    "required": true
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the track",
+                    "multiple": false,
+                    "required": false
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The track name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getCorrection": {
+            "auth": false,
+            "description": "Use the last.fm corrections data to check whether the supplied track has a correction to a canonical track",
+            "documentation": "http://www.last.fm/api/show/track.getCorrection",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name to correct.",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : The track name to correct.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getFingerprintMetadata": {
+            "auth": false,
+            "description": "Retrieve track metadata associated with a fingerprint id generated by the Last.fm Fingerprinter. Returns track elements, along with a 'rank' value between 0 and 1 reflecting the confidence for each match. See this blog post for more info.",
+            "documentation": "http://www.last.fm/api/show/track.getFingerprintMetadata",
+            "http": "GET",
+            "params": {
+                "fingerprintid": {
+                    "boolean": false,
+                    "description": "(Required) : The fingerprint id to look up",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getInfo": {
+            "auth": false,
+            "description": "Get the metadata for a track on Last.fm using the artist/track name or a musicbrainz id.",
+            "documentation": "http://www.last.fm/api/show/track.getInfo",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the track",
+                    "multiple": false,
+                    "required": false
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The track name",
+                    "multiple": false,
+                    "required": true
+                },
+                "username": {
+                    "boolean": false,
+                    "description": "(Optional) : The username for the context of the request. If supplied, the user's playcount for this track and whether they have loved the track is included in the response.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getShouts": {
+            "auth": false,
+            "description": "Get shouts for this track. Also available as an rss feed.",
+            "documentation": "http://www.last.fm/api/show/track.getShouts",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the track",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The track name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getSimilar": {
+            "auth": false,
+            "description": "Get the similar tracks for this track on Last.fm, based on listening data.",
+            "documentation": "http://www.last.fm/api/show/track.getSimilar",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : Maximum number of similar tracks to return",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the track",
+                    "multiple": false,
+                    "required": false
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The track name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getTags": {
+            "auth": false,
+            "description": "Get the tags applied by an individual user to a track on Last.fm. To retrieve the list of top tags applied to a track by all users use track.getTopTags.",
+            "documentation": "http://www.last.fm/api/show/track.getTags",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the track",
+                    "multiple": false,
+                    "required": false
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The track name",
+                    "multiple": false,
+                    "required": true
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Optional) : If called in non-authenticated mode you must specify the user to look up",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getTopFans": {
+            "auth": false,
+            "description": "Get the top fans for this track on Last.fm, based on listening data. Supply either track & artist name or musicbrainz id.",
+            "documentation": "http://www.last.fm/api/show/track.getTopFans",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the track",
+                    "multiple": false,
+                    "required": false
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The track name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getTopTags": {
+            "auth": false,
+            "description": "Get the top tags for this track on Last.fm, ordered by tag count. Supply either track & artist name or mbid.",
+            "documentation": "http://www.last.fm/api/show/track.getTopTags",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "autocorrect": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The musicbrainz id for the track",
+                    "multiple": false,
+                    "required": false
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required (unless mbid)] : The track name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "love": {
+            "auth": true,
+            "description": "Love a track for a user profile.",
+            "documentation": "http://www.last.fm/api/show/track.love",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : An artist name (utf8 encoded)",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : A track name (utf8 encoded)",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "removeTag": {
+            "auth": true,
+            "description": "Remove a user's tag from a track.",
+            "documentation": "http://www.last.fm/api/show/track.removeTag",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name",
+                    "multiple": false,
+                    "required": true
+                },
+                "tag": {
+                    "boolean": false,
+                    "description": "(Required) : A single user tag to remove from this track.",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : The track name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "scrobble": {
+            "auth": true,
+            "description": "Used to add a track-play to a user's profile. Scrobble a track, or a batch of tracks. Tracks are passed to the service using array notation for each of the below params, up to a maximum of 50 scrobbles per batch [0<=i<=49]. If you are only sending a single scrobble the array notation may be ommited. Note: Extra care should be taken while calculating the signature when using array notation as the parameter names MUST be sorted according to the ASCII table (i.e., artist[10] comes before artist[1]). It is important to not use the corrections returned by the now playing service as input for the scrobble request, unless they have been explicitly approved by the user. Parameter names are case sensitive.",
+            "documentation": "http://www.last.fm/api/show/track.scrobble",
+            "http": "POST",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "[i] (Optional) : The album name.",
+                    "multiple": true,
+                    "required": false
+                },
+                "albumArtist": {
+                    "boolean": false,
+                    "description": "[i] (Optional) : The album artist - if this differs from the track artist.",
+                    "multiple": true,
+                    "required": false
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "[i] (Required) : The artist name.",
+                    "multiple": true,
+                    "required": true
+                },
+                "chosenByUser": {
+                    "boolean": false,
+                    "description": "[i] (Optional) : Set to 1 if the user chose this song, or 0 if the song was chosen by someone else (such as a radio station or recommendation service). Assumes 1 if not specified",
+                    "multiple": true,
+                    "required": false
+                },
+                "context": {
+                    "boolean": false,
+                    "description": "[i] (Optional) : Sub-client version (not public, only enabled for certain API keys)",
+                    "multiple": true,
+                    "required": false
+                },
+                "duration": {
+                    "boolean": false,
+                    "description": "[i] (Optional) : The length of the track in seconds.",
+                    "multiple": true,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "[i] (Optional) : The MusicBrainz Track ID.",
+                    "multiple": true,
+                    "required": false
+                },
+                "streamId": {
+                    "boolean": false,
+                    "description": "[i] (Optional) : The stream id for this track received from the radio.getPlaylist service, if scrobbling Last.fm radio",
+                    "multiple": true,
+                    "required": false
+                },
+                "timestamp": {
+                    "boolean": false,
+                    "description": "[i] (Required) : The time the track started playing, in UNIX timestamp format (integer number of seconds since 00:00:00, January 1st 1970 UTC). This must be in the UTC time zone.",
+                    "multiple": true,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "[i] (Required) : The track name.",
+                    "multiple": true,
+                    "required": true
+                },
+                "trackNumber": {
+                    "boolean": false,
+                    "description": "[i] (Optional) : The track number of the track on the album.",
+                    "multiple": true,
+                    "required": false
+                }
+            }
+        },
+        "search": {
+            "auth": false,
+            "description": "Search for a track by track name. Returns track matches sorted by relevance.",
+            "documentation": "http://www.last.fm/api/show/track.search",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Optional) : Narrow your search by specifying an artist.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 30.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : The track name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "share": {
+            "auth": true,
+            "description": "Share a track twith one or more Last.fm users or other friends.",
+            "documentation": "http://www.last.fm/api/show/track.share",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : An artist name.",
+                    "multiple": false,
+                    "required": true
+                },
+                "message": {
+                    "boolean": false,
+                    "description": "(Optional): An optional message to send with the recommendation. If not supplied a default message will be used.",
+                    "multiple": false,
+                    "required": false
+                },
+                "public": {
+                    "boolean": false,
+                    "description": "(Optional): Optionally show in the sharing users activity feed. Defaults to 0 (false).",
+                    "multiple": false,
+                    "required": false
+                },
+                "recipient": {
+                    "boolean": false,
+                    "description": "(Required): Email Address | Last.fm Username - A comma delimited list of email addresses or Last.fm usernames. Maximum is 10.",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : A track name.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "unban": {
+            "auth": true,
+            "description": "UnBan a track for a user profile.",
+            "documentation": "http://www.last.fm/api/show/track.unban",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : An artist name (utf8 encoded)",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : A track name (utf8 encoded)",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "unlove": {
+            "auth": true,
+            "description": "UnLove a track for a user profile.",
+            "documentation": "http://www.last.fm/api/show/track.unlove",
+            "http": "POST",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : An artist name (utf8 encoded)",
+                    "multiple": false,
+                    "required": true
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : A track name (utf8 encoded)",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "updateNowPlaying": {
+            "auth": true,
+            "description": "Used to notify Last.fm that a user has started listening to a track. Parameter names are case sensitive.",
+            "documentation": "http://www.last.fm/api/show/track.updateNowPlaying",
+            "http": "POST",
+            "params": {
+                "album": {
+                    "boolean": false,
+                    "description": "(Optional) : The album name.",
+                    "multiple": false,
+                    "required": false
+                },
+                "albumArtist": {
+                    "boolean": false,
+                    "description": "(Optional) : The album artist - if this differs from the track artist.",
+                    "multiple": false,
+                    "required": false
+                },
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name.",
+                    "multiple": false,
+                    "required": true
+                },
+                "context": {
+                    "boolean": false,
+                    "description": "(Optional) : Sub-client version (not public, only enabled for certain API keys)",
+                    "multiple": false,
+                    "required": false
+                },
+                "duration": {
+                    "boolean": false,
+                    "description": "(Optional) : The length of the track in seconds.",
+                    "multiple": false,
+                    "required": false
+                },
+                "mbid": {
+                    "boolean": false,
+                    "description": "(Optional) : The MusicBrainz Track ID.",
+                    "multiple": false,
+                    "required": false
+                },
+                "track": {
+                    "boolean": false,
+                    "description": "(Required) : The track name.",
+                    "multiple": false,
+                    "required": true
+                },
+                "trackNumber": {
+                    "boolean": false,
+                    "description": "(Optional) : The track number of the track on the album.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        }
+    },
+    "user": {
+        "getArtistTracks": {
+            "auth": false,
+            "description": "Get a list of tracks by a given artist scrobbled by this user, including scrobble time. Can be limited to specific timeranges, defaults to all time.",
+            "documentation": "http://www.last.fm/api/show/user.getArtistTracks",
+            "http": "GET",
+            "params": {
+                "artist": {
+                    "boolean": false,
+                    "description": "(Required) : The artist name you are interested in",
+                    "multiple": false,
+                    "required": true
+                },
+                "endTimestamp": {
+                    "boolean": false,
+                    "description": "(Optional) : An unix timestamp to end at.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "startTimestamp": {
+                    "boolean": false,
+                    "description": "(Optional) : An unix timestamp to start at.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm username to fetch the recent tracks of.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getBannedTracks": {
+            "auth": false,
+            "description": "Returns the tracks banned by the user",
+            "documentation": "http://www.last.fm/api/show/user.getBannedTracks",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The user name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getEvents": {
+            "auth": false,
+            "description": "Get a list of upcoming events that this user is attending. Easily integratable into calendars, using the ical standard (see 'more formats' section below).",
+            "documentation": "http://www.last.fm/api/show/user.getEvents",
+            "http": "GET",
+            "params": {
+                "festivalsonly": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Whether only festivals should be returned, or all events.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The user to fetch the events for.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getFriends": {
+            "auth": false,
+            "description": "Get a list of the user's friends on Last.fm.",
+            "documentation": "http://www.last.fm/api/show/user.getFriends",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "recenttracks": {
+                    "boolean": false,
+                    "description": "(Optional) : Whether or not to include information about friends' recent listening in the response.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm username to fetch the friends of.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getInfo": {
+            "auth": false,
+            "description": "Get information about a user profile.",
+            "documentation": "http://www.last.fm/api/show/user.getInfo",
+            "http": "GET",
+            "params": {
+                "user": {
+                    "boolean": false,
+                    "description": "(Optional) : The user to fetch info for. Defaults to the authenticated user.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getLovedTracks": {
+            "auth": false,
+            "description": "Get the last 50 tracks loved by a user.",
+            "documentation": "http://www.last.fm/api/show/user.getLovedTracks",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The user name to fetch the loved tracks for.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getNeighbours": {
+            "auth": false,
+            "description": "Get a list of a user's neighbours on Last.fm.",
+            "documentation": "http://www.last.fm/api/show/user.getNeighbours",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm username to fetch the neighbours of.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getNewReleases": {
+            "auth": false,
+            "description": "Gets a list of forthcoming releases based on a user's musical taste.",
+            "documentation": "http://www.last.fm/api/show/user.getNewReleases",
+            "http": "GET",
+            "params": {
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The Last.fm username.",
+                    "multiple": false,
+                    "required": true
+                },
+                "userecs": {
+                    "boolean": false,
+                    "description": "(Optional) : 0 or 1. If 1, the feed contains new releases based on Last.fm's artist recommendations for this user. Otherwise, it is based on their library (the default).",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getPastEvents": {
+            "auth": false,
+            "description": "Get a paginated list of all events a user has attended in the past.",
+            "documentation": "http://www.last.fm/api/show/user.getPastEvents",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to scan to.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The username to fetch the events for.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getPersonalTags": {
+            "auth": false,
+            "description": "Get the user's personal tags",
+            "documentation": "http://www.last.fm/api/show/user.getPersonalTags",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "tag": {
+                    "boolean": false,
+                    "description": "(Required) : The tag you're interested in.",
+                    "multiple": false,
+                    "required": true
+                },
+                "taggingtype": {
+                    "boolean": false,
+                    "description": "[artist|album|track] (Required) : The type of items which have been tagged",
+                    "multiple": false,
+                    "required": true
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The user who performed the taggings.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getPlaylists": {
+            "auth": false,
+            "description": "Get a list of a user's playlists on Last.fm.",
+            "documentation": "http://www.last.fm/api/show/user.getPlaylists",
+            "http": "GET",
+            "params": {
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm username to fetch the playlists of.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getRecentStations": {
+            "auth": true,
+            "description": "Get a list of the recent Stations listened to by this user.",
+            "documentation": "http://www.last.fm/api/show/user.getRecentStations",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 10. Maximum is 25.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm username to fetch the recent Stations of.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getRecentTracks": {
+            "auth": false,
+            "description": "Get a list of the recent tracks listened to by this user. Also includes the currently playing track with the nowplaying=\"true\" attribute if the user is currently listening.",
+            "documentation": "http://www.last.fm/api/show/user.getRecentTracks",
+            "http": "GET",
+            "params": {
+                "extended": {
+                    "boolean": false,
+                    "description": "(0|1) (Optional) : Includes extended data in each artist, and whether or not the user has loved each track",
+                    "multiple": false,
+                    "required": false
+                },
+                "from": {
+                    "boolean": false,
+                    "description": "(Optional) : Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format (integer number of seconds since 00:00:00, January 1st 1970 UTC). This must be in the UTC time zone.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50. Maximum is 200.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "to": {
+                    "boolean": false,
+                    "description": "(Optional) : End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (integer number of seconds since 00:00:00, January 1st 1970 UTC). This must be in the UTC time zone.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm username to fetch the recent tracks of.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getRecommendedArtists": {
+            "auth": true,
+            "description": "Get Last.fm artist recommendations for a user",
+            "documentation": "http://www.last.fm/api/show/user.getRecommendedArtists",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getRecommendedEvents": {
+            "auth": true,
+            "description": "Get a paginated list of all events recommended to a user by Last.fm, based on their listening profile.",
+            "documentation": "http://www.last.fm/api/show/user.getRecommendedEvents",
+            "http": "GET",
+            "params": {
+                "country": {
+                    "boolean": false,
+                    "description": "(Optional) : Optionally find events in a particular country (use EITHER lat/long or country)",
+                    "multiple": false,
+                    "required": false
+                },
+                "festivalsonly": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Whether only festivals should be returned, or all events.",
+                    "multiple": false,
+                    "required": false
+                },
+                "latitude": {
+                    "boolean": false,
+                    "description": "(Optional) : Optionally find events at a particular location (must be paired with a valid longitude)",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 20.",
+                    "multiple": false,
+                    "required": false
+                },
+                "longitude": {
+                    "boolean": false,
+                    "description": "(Optional) : Optionally find events at a particular location (must be paired with a valid latitude)",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to scan to.",
+                    "multiple": false,
+                    "required": false
+                }
+            }
+        },
+        "getShouts": {
+            "auth": false,
+            "description": "Get shouts for this user. Also available as an rss feed.",
+            "documentation": "http://www.last.fm/api/show/user.getShouts",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The username to fetch shouts for",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getTopAlbums": {
+            "auth": false,
+            "description": "Get the top albums listened to by a user. You can stipulate a time period. Sends the overall chart by default.",
+            "documentation": "http://www.last.fm/api/show/user.getTopAlbums",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "period": {
+                    "boolean": false,
+                    "description": "(Optional) : overall | 7day | 1month | 3month | 6month | 12month - The time period over which to retrieve top albums for.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The user name to fetch top albums for.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getTopArtists": {
+            "auth": false,
+            "description": "Get the top artists listened to by a user. You can stipulate a time period. Sends the overall chart by default.",
+            "documentation": "http://www.last.fm/api/show/user.getTopArtists",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "period": {
+                    "boolean": false,
+                    "description": "(Optional) : overall | 7day | 1month | 3month | 6month | 12month - The time period over which to retrieve top artists for.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The user name to fetch top artists for.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getTopTags": {
+            "auth": false,
+            "description": "Get the top tags used by this user.",
+            "documentation": "http://www.last.fm/api/show/user.getTopTags",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : Limit the number of tags returned",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The user name",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getTopTracks": {
+            "auth": false,
+            "description": "Get the top tracks listened to by a user. You can stipulate a time period. Sends the overall chart by default.",
+            "documentation": "http://www.last.fm/api/show/user.getTopTracks",
+            "http": "GET",
+            "params": {
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The page number to fetch. Defaults to first page.",
+                    "multiple": false,
+                    "required": false
+                },
+                "period": {
+                    "boolean": false,
+                    "description": "(Optional) : overall | 7day | 1month | 3month | 6month | 12month - The time period over which to retrieve top tracks for.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The user name to fetch top tracks for.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getWeeklyAlbumChart": {
+            "auth": false,
+            "description": "Get an album chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent album chart for this user.",
+            "documentation": "http://www.last.fm/api/show/user.getWeeklyAlbumChart",
+            "http": "GET",
+            "params": {
+                "from": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should start from. See User.getChartsList for more.",
+                    "multiple": false,
+                    "required": false
+                },
+                "to": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should end on. See User.getChartsList for more.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm username to fetch the charts of.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getWeeklyArtistChart": {
+            "auth": false,
+            "description": "Get an artist chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent artist chart for this user.",
+            "documentation": "http://www.last.fm/api/show/user.getWeeklyArtistChart",
+            "http": "GET",
+            "params": {
+                "from": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should start from. See User.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                },
+                "to": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should end on. See User.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm username to fetch the charts of.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getWeeklyChartList": {
+            "auth": false,
+            "description": "Get a list of available charts for this user, expressed as date ranges which can be sent to the chart services.",
+            "documentation": "http://www.last.fm/api/show/user.getWeeklyChartList",
+            "http": "GET",
+            "params": {
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm username to fetch the charts list for.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getWeeklyTrackChart": {
+            "auth": false,
+            "description": "Get a track chart for a user profile, for a given date range. If no date range is supplied, it will return the most recent track chart for this user.",
+            "documentation": "http://www.last.fm/api/show/user.getWeeklyTrackChart",
+            "http": "GET",
+            "params": {
+                "from": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should start from. See User.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                },
+                "to": {
+                    "boolean": false,
+                    "description": "(Optional) : The date at which the chart should end on. See User.getWeeklyChartList for more.",
+                    "multiple": false,
+                    "required": false
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The last.fm username to fetch the charts of.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "shout": {
+            "auth": true,
+            "description": "Shout on this user's shoutbox",
+            "documentation": "http://www.last.fm/api/show/user.shout",
+            "http": "POST",
+            "params": {
+                "message": {
+                    "boolean": false,
+                    "description": "(Required) : The message to post to the shoutbox.",
+                    "multiple": false,
+                    "required": true
+                },
+                "user": {
+                    "boolean": false,
+                    "description": "(Required) : The name of the user to shout on.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "signUp": {
+            "auth": true,
+            "description": "",
+            "documentation": "http://www.last.fm/api/show/user.signUp",
+            "http": "GET",
+            "params": {}
+        },
+        "terms": {
+            "auth": true,
+            "description": "",
+            "documentation": "http://www.last.fm/api/show/user.terms",
+            "http": "GET",
+            "params": {}
+        }
+    },
+    "venue": {
+        "getEvents": {
+            "auth": false,
+            "description": "Get a list of upcoming events at this venue.",
+            "documentation": "http://www.last.fm/api/show/venue.getEvents",
+            "http": "GET",
+            "params": {
+                "festivalsonly": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Whether only festivals should be returned, or all events.",
+                    "multiple": false,
+                    "required": false
+                },
+                "venue": {
+                    "boolean": false,
+                    "description": "(Required) :The id for the venue you would like to fetch event listings for.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "getPastEvents": {
+            "auth": false,
+            "description": "Get a paginated list of all the events held at this venue in the past.",
+            "documentation": "http://www.last.fm/api/show/venue.getPastEvents",
+            "http": "GET",
+            "params": {
+                "festivalsonly": {
+                    "boolean": true,
+                    "description": "[0|1] (Optional) : Whether only festivals should be returned, or all events.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) :The page of results to return.",
+                    "multiple": false,
+                    "required": false
+                },
+                "venue": {
+                    "boolean": false,
+                    "description": "(Required) :The id for the venue you would like to fetch event listings for.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        },
+        "search": {
+            "auth": false,
+            "description": "Search for a venue by venue name",
+            "documentation": "http://www.last.fm/api/show/venue.search",
+            "http": "GET",
+            "params": {
+                "country": {
+                    "boolean": false,
+                    "description": "(Optional) : Filter your results by country. Expressed as an ISO 3166-2 code.",
+                    "multiple": false,
+                    "required": false
+                },
+                "limit": {
+                    "boolean": false,
+                    "description": "(Optional) : The number of results to fetch per page. Defaults to 50.",
+                    "multiple": false,
+                    "required": false
+                },
+                "page": {
+                    "boolean": false,
+                    "description": "(Optional) : The results page you would like to fetch",
+                    "multiple": false,
+                    "required": false
+                },
+                "venue": {
+                    "boolean": false,
+                    "description": "(Required) : The venue name you would like to search for.",
+                    "multiple": false,
+                    "required": true
+                }
+            }
+        }
+    }
+}

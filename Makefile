@@ -1,7 +1,7 @@
 build: spec code
 
 spec:
-	./generate.py spec > spec.json
+	./generate.py spec > api.json
 
 code:
 	./generate.py code > laastfm/api.py
