@@ -2,8 +2,6 @@ import json
 from hashlib import md5
 from urllib import urlencode
 
-import requests
-
 from .api import BaseClient
 from .exceptions import EXCEPTIONS_BY_CODE
 
@@ -73,6 +71,13 @@ class LastfmClient(BaseClient):
         :type params: dict
 
         """
+        try:
+            import requests
+        except ImportError:
+            raise RuntimeError(
+                'You need to install requests `pip install '
+                'requests` for LastfmClient to work.'
+            )
         params = self._get_params(method, params, auth)
         data = requests.request(http_method, API_URL, params=params).json
         return self._process_response_data(data)
