@@ -219,7 +219,7 @@ def args_doc_call(method_name, spec):
 
     doc = prefix('\n'.join(doc), ' ' * 8)
 
-    call = '%sreturn self.call(%s)\n' %(
+    call = '%sreturn self._call(%s)\n' %(
         ' ' * 8,
         ', '.join([q(spec['http']), q(method_name), 'auth=%s' % spec['auth']] +
                   [name + '=' + name

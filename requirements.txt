@@ -1,4 +1,4 @@
-requests
+requests==1.2.3
 
 # Only needed for `make spec`.
-lxml
+# lxml

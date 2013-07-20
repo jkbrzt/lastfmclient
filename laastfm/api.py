@@ -1,5 +1,5 @@
 # Generated code. Do not edit.
-# 2013-02-22T23:45:20.115915Z
+# 2013-07-20T08:21:04.861632Z
 from .package import Package
 
 
@@ -44,7 +44,7 @@ class Album(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'addTags', auth=True, album=album, artist=artist, tags=tags, callback=callback)
+        return self._call('POST', 'addTags', auth=True, album=album, artist=artist, tags=tags, callback=callback)
 
     def get_buylinks(self, album, artist, country, autocorrect=None, mbid=None, callback=None):
         """
@@ -72,7 +72,7 @@ class Album(Package):
             (Optional) : The musicbrainz id for the album
         
         """
-        return self.call('GET', 'getBuylinks', auth=False, album=album, artist=artist, country=country, autocorrect=autocorrect, callback=callback, mbid=mbid)
+        return self._call('GET', 'getBuylinks', auth=False, album=album, artist=artist, country=country, autocorrect=autocorrect, callback=callback, mbid=mbid)
 
     def get_info(self, album, artist, lang=None, autocorrect=None, username=None, mbid=None, callback=None):
         """
@@ -103,7 +103,7 @@ class Album(Package):
             the user's playcount for this album is included in the response.
         
         """
-        return self.call('GET', 'getInfo', auth=False, album=album, artist=artist, autocorrect=autocorrect, callback=callback, lang=lang, mbid=mbid, username=username)
+        return self._call('GET', 'getInfo', auth=False, album=album, artist=artist, autocorrect=autocorrect, callback=callback, lang=lang, mbid=mbid, username=username)
 
     def get_shouts(self, artist, autocorrect=None, page=None, limit=None, mbid=None, callback=None):
         """
@@ -129,7 +129,7 @@ class Album(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getShouts', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
+        return self._call('GET', 'getShouts', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
 
     def get_tags(self, album, artist, autocorrect=None, user=None, mbid=None, callback=None):
         """
@@ -158,7 +158,7 @@ class Album(Package):
             user to look up
         
         """
-        return self.call('GET', 'getTags', auth=False, album=album, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid, user=user)
+        return self._call('GET', 'getTags', auth=False, album=album, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid, user=user)
 
     def get_top_tags(self, album, artist, autocorrect=None, mbid=None, callback=None):
         """
@@ -182,7 +182,7 @@ class Album(Package):
             (Optional) : The musicbrainz id for the album
         
         """
-        return self.call('GET', 'getTopTags', auth=False, album=album, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid)
+        return self._call('GET', 'getTopTags', auth=False, album=album, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid)
 
     def remove_tag(self, album, artist, tag, callback=None):
         """
@@ -202,7 +202,7 @@ class Album(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'removeTag', auth=True, album=album, artist=artist, tag=tag, callback=callback)
+        return self._call('POST', 'removeTag', auth=True, album=album, artist=artist, tag=tag, callback=callback)
 
     def search(self, album, limit=None, page=None, callback=None):
         """
@@ -223,7 +223,7 @@ class Album(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'search', auth=False, album=album, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'search', auth=False, album=album, callback=callback, limit=limit, page=page)
 
     def share(self, album, artist, recipient, message=None, public=None, callback=None):
         """
@@ -250,7 +250,7 @@ class Album(Package):
             Defaults to 0 (false).
         
         """
-        return self.call('POST', 'share', auth=True, album=album, artist=artist, recipient=recipient, callback=callback, message=message, public=public)
+        return self._call('POST', 'share', auth=True, album=album, artist=artist, recipient=recipient, callback=callback, message=message, public=public)
 
 class Artist(Package):
 
@@ -271,7 +271,7 @@ class Artist(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'addTags', auth=True, artist=artist, tags=tags, callback=callback)
+        return self._call('POST', 'addTags', auth=True, artist=artist, tags=tags, callback=callback)
 
     def get_correction(self, artist, callback=None):
         """
@@ -288,7 +288,7 @@ class Artist(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getCorrection', auth=False, artist=artist, callback=callback)
+        return self._call('GET', 'getCorrection', auth=False, artist=artist, callback=callback)
 
     def get_events(self, artist, autocorrect=None, festivalsonly=None, mbid=None, limit=None, page=None, callback=None):
         """
@@ -318,7 +318,7 @@ class Artist(Package):
             (Optiona) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getEvents', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, festivalsonly=festivalsonly, limit=limit, mbid=mbid, page=page)
+        return self._call('GET', 'getEvents', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, festivalsonly=festivalsonly, limit=limit, mbid=mbid, page=page)
 
     def get_info(self, artist, lang=None, username=None, autocorrect=None, mbid=None, callback=None):
         """
@@ -347,7 +347,7 @@ class Artist(Package):
             the user's playcount for this artist is included in the response.
         
         """
-        return self.call('GET', 'getInfo', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, lang=lang, mbid=mbid, username=username)
+        return self._call('GET', 'getInfo', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, lang=lang, mbid=mbid, username=username)
 
     def get_past_events(self, artist, autocorrect=None, page=None, limit=None, mbid=None, callback=None):
         """
@@ -375,7 +375,7 @@ class Artist(Package):
             (Optional) :The page of results to return.
         
         """
-        return self.call('GET', 'getPastEvents', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
+        return self._call('GET', 'getPastEvents', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
 
     def get_podcast(self, artist, autocorrect=None, mbid=None, callback=None):
         """
@@ -397,7 +397,7 @@ class Artist(Package):
             (Optional) : The musicbrainz id for the artist
         
         """
-        return self.call('GET', 'getPodcast', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid)
+        return self._call('GET', 'getPodcast', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid)
 
     def get_shouts(self, artist, autocorrect=None, page=None, limit=None, mbid=None, callback=None):
         """
@@ -423,7 +423,7 @@ class Artist(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getShouts', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
+        return self._call('GET', 'getShouts', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
 
     def get_similar(self, artist, autocorrect=None, limit=None, mbid=None, callback=None):
         """
@@ -447,7 +447,7 @@ class Artist(Package):
             (Optional) : The musicbrainz id for the artist
         
         """
-        return self.call('GET', 'getSimilar', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid)
+        return self._call('GET', 'getSimilar', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid)
 
     def get_tags(self, artist, user=None, autocorrect=None, mbid=None, callback=None):
         """
@@ -476,7 +476,7 @@ class Artist(Package):
             user to look up
         
         """
-        return self.call('GET', 'getTags', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid, user=user)
+        return self._call('GET', 'getTags', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid, user=user)
 
     def get_top_albums(self, artist, autocorrect=None, page=None, limit=None, mbid=None, callback=None):
         """
@@ -502,7 +502,7 @@ class Artist(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getTopAlbums', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
+        return self._call('GET', 'getTopAlbums', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
 
     def get_top_fans(self, artist, autocorrect=None, mbid=None, callback=None):
         """
@@ -524,7 +524,7 @@ class Artist(Package):
             (Optional) : The musicbrainz id for the artist
         
         """
-        return self.call('GET', 'getTopFans', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid)
+        return self._call('GET', 'getTopFans', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid)
 
     def get_top_tags(self, artist, autocorrect=None, mbid=None, callback=None):
         """
@@ -546,7 +546,7 @@ class Artist(Package):
             (Optional) : The musicbrainz id for the artist
         
         """
-        return self.call('GET', 'getTopTags', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid)
+        return self._call('GET', 'getTopTags', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, mbid=mbid)
 
     def get_top_tracks(self, artist, autocorrect=None, page=None, limit=None, mbid=None, callback=None):
         """
@@ -572,7 +572,7 @@ class Artist(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getTopTracks', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
+        return self._call('GET', 'getTopTracks', auth=False, artist=artist, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
 
     def remove_tag(self, artist, tag, callback=None):
         """
@@ -590,7 +590,7 @@ class Artist(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'removeTag', auth=True, artist=artist, tag=tag, callback=callback)
+        return self._call('POST', 'removeTag', auth=True, artist=artist, tag=tag, callback=callback)
 
     def search(self, artist, limit=None, page=None, callback=None):
         """
@@ -611,7 +611,7 @@ class Artist(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'search', auth=False, artist=artist, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'search', auth=False, artist=artist, callback=callback, limit=limit, page=page)
 
     def share(self, artist, recipient, message=None, public=None, callback=None):
         """
@@ -636,7 +636,7 @@ class Artist(Package):
             Defaults to 0 (false).
         
         """
-        return self.call('POST', 'share', auth=True, artist=artist, recipient=recipient, callback=callback, message=message, public=public)
+        return self._call('POST', 'share', auth=True, artist=artist, recipient=recipient, callback=callback, message=message, public=public)
 
     def shout(self, artist, message, callback=None):
         """
@@ -654,7 +654,7 @@ class Artist(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'shout', auth=True, artist=artist, message=message, callback=callback)
+        return self._call('POST', 'shout', auth=True, artist=artist, message=message, callback=callback)
 
 class Auth(Package):
 
@@ -677,7 +677,7 @@ class Auth(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getMobileSession', auth=False, password=password, username=username, callback=callback)
+        return self._call('GET', 'getMobileSession', auth=False, password=password, username=username, callback=callback)
 
     def get_session(self, token, callback=None):
         """
@@ -696,7 +696,7 @@ class Auth(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getSession', auth=False, token=token, callback=callback)
+        return self._call('GET', 'getSession', auth=False, token=token, callback=callback)
 
     def get_token(self, callback=None):
         """
@@ -712,7 +712,7 @@ class Auth(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getToken', auth=False, callback=callback)
+        return self._call('GET', 'getToken', auth=False, callback=callback)
 
 class Chart(Package):
 
@@ -732,7 +732,7 @@ class Chart(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getHypedArtists', auth=False, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getHypedArtists', auth=False, callback=callback, limit=limit, page=page)
 
     def get_hyped_tracks(self, limit=None, page=None, callback=None):
         """
@@ -750,7 +750,7 @@ class Chart(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getHypedTracks', auth=False, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getHypedTracks', auth=False, callback=callback, limit=limit, page=page)
 
     def get_loved_tracks(self, limit=None, page=None, callback=None):
         """
@@ -768,7 +768,7 @@ class Chart(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getLovedTracks', auth=False, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getLovedTracks', auth=False, callback=callback, limit=limit, page=page)
 
     def get_top_artists(self, limit=None, page=None, callback=None):
         """
@@ -786,7 +786,7 @@ class Chart(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getTopArtists', auth=False, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getTopArtists', auth=False, callback=callback, limit=limit, page=page)
 
     def get_top_tags(self, limit=None, page=None, callback=None):
         """
@@ -804,7 +804,7 @@ class Chart(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getTopTags', auth=False, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getTopTags', auth=False, callback=callback, limit=limit, page=page)
 
     def get_top_tracks(self, limit=None, page=None, callback=None):
         """
@@ -822,7 +822,7 @@ class Chart(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getTopTracks', auth=False, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getTopTracks', auth=False, callback=callback, limit=limit, page=page)
 
 class Event(Package):
 
@@ -843,7 +843,7 @@ class Event(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'attend', auth=True, event=event, status=status, callback=callback)
+        return self._call('POST', 'attend', auth=True, event=event, status=status, callback=callback)
 
     def get_attendees(self, event, limit=None, page=None, callback=None):
         """
@@ -863,7 +863,7 @@ class Event(Package):
             (Optiona) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getAttendees', auth=False, event=event, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getAttendees', auth=False, event=event, callback=callback, limit=limit, page=page)
 
     def get_info(self, event, callback=None):
         """
@@ -880,7 +880,7 @@ class Event(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getInfo', auth=False, event=event, callback=callback)
+        return self._call('GET', 'getInfo', auth=False, event=event, callback=callback)
 
     def get_shouts(self, event, limit=None, page=None, callback=None):
         """
@@ -900,7 +900,7 @@ class Event(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getShouts', auth=False, event=event, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getShouts', auth=False, event=event, callback=callback, limit=limit, page=page)
 
     def share(self, event, recipient, message=None, public=None, callback=None):
         """
@@ -925,7 +925,7 @@ class Event(Package):
             activity. Defaults to 0 (false).
         
         """
-        return self.call('POST', 'share', auth=True, event=event, recipient=recipient, callback=callback, message=message, public=public)
+        return self._call('POST', 'share', auth=True, event=event, recipient=recipient, callback=callback, message=message, public=public)
 
     def shout(self, event, message, callback=None):
         """
@@ -943,7 +943,7 @@ class Event(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'shout', auth=True, event=event, message=message, callback=callback)
+        return self._call('POST', 'shout', auth=True, event=event, message=message, callback=callback)
 
 class Geo(Package):
 
@@ -979,7 +979,7 @@ class Geo(Package):
             (Optional) : Specifies a tag to filter by.
         
         """
-        return self.call('GET', 'getEvents', auth=False, callback=callback, distance=distance, festivalsonly=festivalsonly, lat=lat, limit=limit, location=location, long=long, page=page, tag=tag)
+        return self._call('GET', 'getEvents', auth=False, callback=callback, distance=distance, festivalsonly=festivalsonly, lat=lat, limit=limit, location=location, long=long, page=page, tag=tag)
 
     def get_metro_artist_chart(self, country, metro, end=None, start=None, limit=None, page=None, callback=None):
         """
@@ -1008,7 +1008,7 @@ class Geo(Package):
             geo.getWeeklyChartlist)
         
         """
-        return self.call('GET', 'getMetroArtistChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
+        return self._call('GET', 'getMetroArtistChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
 
     def get_metro_hype_artist_chart(self, country, metro, end=None, start=None, limit=None, page=None, callback=None):
         """
@@ -1037,7 +1037,7 @@ class Geo(Package):
             geo.getWeeklyChartlist)
         
         """
-        return self.call('GET', 'getMetroHypeArtistChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
+        return self._call('GET', 'getMetroHypeArtistChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
 
     def get_metro_hype_track_chart(self, country, metro, end=None, start=None, limit=None, page=None, callback=None):
         """
@@ -1066,7 +1066,7 @@ class Geo(Package):
             geo.getWeeklyChartlist)
         
         """
-        return self.call('GET', 'getMetroHypeTrackChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
+        return self._call('GET', 'getMetroHypeTrackChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
 
     def get_metro_track_chart(self, country, metro, end=None, start=None, limit=None, page=None, callback=None):
         """
@@ -1095,7 +1095,7 @@ class Geo(Package):
             geo.getWeeklyChartlist)
         
         """
-        return self.call('GET', 'getMetroTrackChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
+        return self._call('GET', 'getMetroTrackChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
 
     def get_metro_unique_artist_chart(self, country, metro, end=None, start=None, limit=None, page=None, callback=None):
         """
@@ -1124,7 +1124,7 @@ class Geo(Package):
             geo.getWeeklyChartlist)
         
         """
-        return self.call('GET', 'getMetroUniqueArtistChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
+        return self._call('GET', 'getMetroUniqueArtistChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
 
     def get_metro_unique_track_chart(self, country, metro, end=None, start=None, limit=None, page=None, callback=None):
         """
@@ -1153,7 +1153,7 @@ class Geo(Package):
             geo.getWeeklyChartlist)
         
         """
-        return self.call('GET', 'getMetroUniqueTrackChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
+        return self._call('GET', 'getMetroUniqueTrackChart', auth=False, country=country, metro=metro, callback=callback, end=end, limit=limit, page=page, start=start)
 
     def get_metro_weekly_chartlist(self, metro=None, callback=None):
         """
@@ -1170,7 +1170,7 @@ class Geo(Package):
             : The metro name to fetch the charts list for.
         
         """
-        return self.call('GET', 'getMetroWeeklyChartlist', auth=False, callback=callback, metro=metro)
+        return self._call('GET', 'getMetroWeeklyChartlist', auth=False, callback=callback, metro=metro)
 
     def get_metros(self, country=None, callback=None):
         """
@@ -1189,7 +1189,7 @@ class Geo(Package):
             standard
         
         """
-        return self.call('GET', 'getMetros', auth=False, callback=callback, country=country)
+        return self._call('GET', 'getMetros', auth=False, callback=callback, country=country)
 
     def get_top_artists(self, country, limit=None, page=None, callback=None):
         """
@@ -1210,7 +1210,7 @@ class Geo(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getTopArtists', auth=False, country=country, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getTopArtists', auth=False, country=country, callback=callback, limit=limit, page=page)
 
     def get_top_tracks(self, country, limit=None, location=None, page=None, callback=None):
         """
@@ -1234,7 +1234,7 @@ class Geo(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getTopTracks', auth=False, country=country, callback=callback, limit=limit, location=location, page=page)
+        return self._call('GET', 'getTopTracks', auth=False, country=country, callback=callback, limit=limit, location=location, page=page)
 
 class Group(Package):
 
@@ -1252,7 +1252,7 @@ class Group(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getHype', auth=False, Group=Group, callback=callback)
+        return self._call('GET', 'getHype', auth=False, Group=Group, callback=callback)
 
     def get_members(self, group, limit=None, page=None, callback=None):
         """
@@ -1272,7 +1272,7 @@ class Group(Package):
             (Optional) : The results page you would like to fetch
         
         """
-        return self.call('GET', 'getMembers', auth=False, group=group, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getMembers', auth=False, group=group, callback=callback, limit=limit, page=page)
 
     def get_weekly_album_chart(self, group, from_=None, to=None, callback=None):
         """
@@ -1296,7 +1296,7 @@ class Group(Package):
             Group.getWeeklyChartList for more.
         
         """
-        return self.call('GET', 'getWeeklyAlbumChart', auth=False, group=group, callback=callback, from_=from_, to=to)
+        return self._call('GET', 'getWeeklyAlbumChart', auth=False, group=group, callback=callback, from_=from_, to=to)
 
     def get_weekly_artist_chart(self, group, from_=None, to=None, callback=None):
         """
@@ -1320,7 +1320,7 @@ class Group(Package):
             Group.getWeeklyChartList for more.
         
         """
-        return self.call('GET', 'getWeeklyArtistChart', auth=False, group=group, callback=callback, from_=from_, to=to)
+        return self._call('GET', 'getWeeklyArtistChart', auth=False, group=group, callback=callback, from_=from_, to=to)
 
     def get_weekly_chart_list(self, group, callback=None):
         """
@@ -1337,7 +1337,7 @@ class Group(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getWeeklyChartList', auth=False, group=group, callback=callback)
+        return self._call('GET', 'getWeeklyChartList', auth=False, group=group, callback=callback)
 
     def get_weekly_track_chart(self, group, from_=None, to=None, callback=None):
         """
@@ -1361,7 +1361,7 @@ class Group(Package):
             Group.getWeeklyChartList for more.
         
         """
-        return self.call('GET', 'getWeeklyTrackChart', auth=False, group=group, callback=callback, from_=from_, to=to)
+        return self._call('GET', 'getWeeklyTrackChart', auth=False, group=group, callback=callback, from_=from_, to=to)
 
 class Library(Package):
 
@@ -1384,7 +1384,7 @@ class Library(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'addAlbum', auth=True, album=album, artist=artist, callback=callback)
+        return self._call('POST', 'addAlbum', auth=True, album=album, artist=artist, callback=callback)
 
     def add_artist(self, artist, callback=None):
         """
@@ -1400,7 +1400,7 @@ class Library(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'addArtist', auth=True, artist=artist, callback=callback)
+        return self._call('POST', 'addArtist', auth=True, artist=artist, callback=callback)
 
     def add_track(self, artist, track, callback=None):
         """
@@ -1418,7 +1418,7 @@ class Library(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'addTrack', auth=True, artist=artist, track=track, callback=callback)
+        return self._call('POST', 'addTrack', auth=True, artist=artist, track=track, callback=callback)
 
     def get_albums(self, user, limit=None, page=None, artist=None, callback=None):
         """
@@ -1441,7 +1441,7 @@ class Library(Package):
             (Optional) : The page number you wish to scan to.
         
         """
-        return self.call('GET', 'getAlbums', auth=False, user=user, artist=artist, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getAlbums', auth=False, user=user, artist=artist, callback=callback, limit=limit, page=page)
 
     def get_artists(self, user, limit=None, page=None, callback=None):
         """
@@ -1462,7 +1462,7 @@ class Library(Package):
             (Optional) : The page number you wish to scan to.
         
         """
-        return self.call('GET', 'getArtists', auth=False, user=user, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getArtists', auth=False, user=user, callback=callback, limit=limit, page=page)
 
     def get_tracks(self, user, album=None, limit=None, page=None, artist=None, callback=None):
         """
@@ -1487,7 +1487,7 @@ class Library(Package):
             (Optional) : The page number you wish to scan to.
         
         """
-        return self.call('GET', 'getTracks', auth=False, user=user, album=album, artist=artist, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getTracks', auth=False, user=user, album=album, artist=artist, callback=callback, limit=limit, page=page)
 
     def remove_album(self, album, artist, callback=None):
         """
@@ -1505,7 +1505,7 @@ class Library(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'removeAlbum', auth=True, album=album, artist=artist, callback=callback)
+        return self._call('POST', 'removeAlbum', auth=True, album=album, artist=artist, callback=callback)
 
     def remove_artist(self, artist, callback=None):
         """
@@ -1521,7 +1521,7 @@ class Library(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'removeArtist', auth=True, artist=artist, callback=callback)
+        return self._call('POST', 'removeArtist', auth=True, artist=artist, callback=callback)
 
     def remove_scrobble(self, artist, timestamp, track, callback=None):
         """
@@ -1542,7 +1542,7 @@ class Library(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'removeScrobble', auth=True, artist=artist, timestamp=timestamp, track=track, callback=callback)
+        return self._call('POST', 'removeScrobble', auth=True, artist=artist, timestamp=timestamp, track=track, callback=callback)
 
     def remove_track(self, artist, track, callback=None):
         """
@@ -1560,7 +1560,7 @@ class Library(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'removeTrack', auth=True, artist=artist, track=track, callback=callback)
+        return self._call('POST', 'removeTrack', auth=True, artist=artist, track=track, callback=callback)
 
 class Playlist(Package):
 
@@ -1584,7 +1584,7 @@ class Playlist(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'addTrack', auth=True, artist=artist, playlistID=playlistID, track=track, callback=callback)
+        return self._call('POST', 'addTrack', auth=True, artist=artist, playlistID=playlistID, track=track, callback=callback)
 
     def create(self, description=None, title=None, callback=None):
         """
@@ -1602,7 +1602,7 @@ class Playlist(Package):
             (Optional) : Title for the playlist
         
         """
-        return self.call('POST', 'create', auth=True, callback=callback, description=description, title=title)
+        return self._call('POST', 'create', auth=True, callback=callback, description=description, title=title)
 
 class Radio(Package):
 
@@ -1633,7 +1633,7 @@ class Radio(Package):
             multipliers are 1.0 and 2.0)
         
         """
-        return self.call('GET', 'getPlaylist', auth=True, bitrate=bitrate, buylinks=buylinks, callback=callback, discovery=discovery, rtp=rtp, speed_multiplier=speed_multiplier)
+        return self._call('GET', 'getPlaylist', auth=True, bitrate=bitrate, buylinks=buylinks, callback=callback, discovery=discovery, rtp=rtp, speed_multiplier=speed_multiplier)
 
     def search(self, name, callback=None):
         """
@@ -1650,7 +1650,7 @@ class Radio(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'search', auth=False, name=name, callback=callback)
+        return self._call('GET', 'search', auth=False, name=name, callback=callback)
 
     def tune(self, station, lang=None, callback=None):
         """
@@ -1669,7 +1669,7 @@ class Radio(Package):
             the station name in, expressed as an ISO 639 alpha-2 code.
         
         """
-        return self.call('POST', 'tune', auth=True, station=station, callback=callback, lang=lang)
+        return self._call('POST', 'tune', auth=True, station=station, callback=callback, lang=lang)
 
 class Tag(Package):
 
@@ -1690,7 +1690,7 @@ class Tag(Package):
             ISO 639 alpha-2 code.
         
         """
-        return self.call('GET', 'getInfo', auth=False, artist=artist, callback=callback, lang=lang)
+        return self._call('GET', 'getInfo', auth=False, artist=artist, callback=callback, lang=lang)
 
     def get_similar(self, tag, callback=None):
         """
@@ -1707,7 +1707,7 @@ class Tag(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getSimilar', auth=False, tag=tag, callback=callback)
+        return self._call('GET', 'getSimilar', auth=False, tag=tag, callback=callback)
 
     def get_top_albums(self, tag, limit=None, page=None, callback=None):
         """
@@ -1727,7 +1727,7 @@ class Tag(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getTopAlbums', auth=False, tag=tag, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getTopAlbums', auth=False, tag=tag, callback=callback, limit=limit, page=page)
 
     def get_top_artists(self, tag, limit=None, page=None, callback=None):
         """
@@ -1747,7 +1747,7 @@ class Tag(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getTopArtists', auth=False, tag=tag, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getTopArtists', auth=False, tag=tag, callback=callback, limit=limit, page=page)
 
     def get_top_tags(self, callback=None):
         """
@@ -1762,7 +1762,7 @@ class Tag(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getTopTags', auth=False, callback=callback)
+        return self._call('GET', 'getTopTags', auth=False, callback=callback)
 
     def get_top_tracks(self, tag, limit=None, page=None, callback=None):
         """
@@ -1782,7 +1782,7 @@ class Tag(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getTopTracks', auth=False, tag=tag, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getTopTracks', auth=False, tag=tag, callback=callback, limit=limit, page=page)
 
     def get_weekly_artist_chart(self, tag, limit=None, from_=None, to=None, callback=None):
         """
@@ -1808,7 +1808,7 @@ class Tag(Package):
             Tag.getWeeklyChartList for more.
         
         """
-        return self.call('GET', 'getWeeklyArtistChart', auth=False, tag=tag, callback=callback, from_=from_, limit=limit, to=to)
+        return self._call('GET', 'getWeeklyArtistChart', auth=False, tag=tag, callback=callback, from_=from_, limit=limit, to=to)
 
     def get_weekly_chart_list(self, tag, callback=None):
         """
@@ -1825,7 +1825,7 @@ class Tag(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getWeeklyChartList', auth=False, tag=tag, callback=callback)
+        return self._call('GET', 'getWeeklyChartList', auth=False, tag=tag, callback=callback)
 
     def search(self, tag, limit=None, page=None, callback=None):
         """
@@ -1845,7 +1845,7 @@ class Tag(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'search', auth=False, tag=tag, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'search', auth=False, tag=tag, callback=callback, limit=limit, page=page)
 
 class Tasteometer(Package):
 
@@ -1870,7 +1870,7 @@ class Tasteometer(Package):
             (Optional, default = 5) : How many shared artists to display
         
         """
-        return self.call('GET', 'compare', auth=False, type=type, value=value, callback=callback, limit=limit)
+        return self._call('GET', 'compare', auth=False, type=type, value=value, callback=callback, limit=limit)
 
     def compare_group(self, callback=None):
         """
@@ -1884,7 +1884,7 @@ class Tasteometer(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'compareGroup', auth=False, callback=callback)
+        return self._call('GET', 'compareGroup', auth=False, callback=callback)
 
 class Track(Package):
 
@@ -1907,7 +1907,7 @@ class Track(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'addTags', auth=True, artist=artist, tags=tags, track=track, callback=callback)
+        return self._call('POST', 'addTags', auth=True, artist=artist, tags=tags, track=track, callback=callback)
 
     def ban(self, artist, track, callback=None):
         """
@@ -1925,7 +1925,7 @@ class Track(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'ban', auth=True, artist=artist, track=track, callback=callback)
+        return self._call('POST', 'ban', auth=True, artist=artist, track=track, callback=callback)
 
     def get_buylinks(self, artist, country, track, autocorrect=None, mbid=None, callback=None):
         """
@@ -1953,7 +1953,7 @@ class Track(Package):
             (Optional) : The musicbrainz id for the track
         
         """
-        return self.call('GET', 'getBuylinks', auth=False, artist=artist, country=country, track=track, autocorrect=autocorrect, callback=callback, mbid=mbid)
+        return self._call('GET', 'getBuylinks', auth=False, artist=artist, country=country, track=track, autocorrect=autocorrect, callback=callback, mbid=mbid)
 
     def get_correction(self, artist, track, callback=None):
         """
@@ -1972,7 +1972,7 @@ class Track(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getCorrection', auth=False, artist=artist, track=track, callback=callback)
+        return self._call('GET', 'getCorrection', auth=False, artist=artist, track=track, callback=callback)
 
     def get_fingerprint_metadata(self, fingerprintid, callback=None):
         """
@@ -1991,7 +1991,7 @@ class Track(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getFingerprintMetadata', auth=False, fingerprintid=fingerprintid, callback=callback)
+        return self._call('GET', 'getFingerprintMetadata', auth=False, fingerprintid=fingerprintid, callback=callback)
 
     def get_info(self, artist, track, username=None, autocorrect=None, mbid=None, callback=None):
         """
@@ -2020,7 +2020,7 @@ class Track(Package):
             track is included in the response.
         
         """
-        return self.call('GET', 'getInfo', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, mbid=mbid, username=username)
+        return self._call('GET', 'getInfo', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, mbid=mbid, username=username)
 
     def get_shouts(self, artist, track, autocorrect=None, mbid=None, limit=None, page=None, callback=None):
         """
@@ -2048,7 +2048,7 @@ class Track(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getShouts', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
+        return self._call('GET', 'getShouts', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid, page=page)
 
     def get_similar(self, artist, track, autocorrect=None, limit=None, mbid=None, callback=None):
         """
@@ -2075,7 +2075,7 @@ class Track(Package):
             (Optional) : The musicbrainz id for the track
         
         """
-        return self.call('GET', 'getSimilar', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid)
+        return self._call('GET', 'getSimilar', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, limit=limit, mbid=mbid)
 
     def get_tags(self, artist, track, autocorrect=None, user=None, mbid=None, callback=None):
         """
@@ -2104,7 +2104,7 @@ class Track(Package):
             user to look up
         
         """
-        return self.call('GET', 'getTags', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, mbid=mbid, user=user)
+        return self._call('GET', 'getTags', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, mbid=mbid, user=user)
 
     def get_top_fans(self, artist, track, autocorrect=None, mbid=None, callback=None):
         """
@@ -2129,7 +2129,7 @@ class Track(Package):
             (Optional) : The musicbrainz id for the track
         
         """
-        return self.call('GET', 'getTopFans', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, mbid=mbid)
+        return self._call('GET', 'getTopFans', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, mbid=mbid)
 
     def get_top_tags(self, artist, track, autocorrect=None, mbid=None, callback=None):
         """
@@ -2154,7 +2154,7 @@ class Track(Package):
             (Optional) : The musicbrainz id for the track
         
         """
-        return self.call('GET', 'getTopTags', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, mbid=mbid)
+        return self._call('GET', 'getTopTags', auth=False, artist=artist, track=track, autocorrect=autocorrect, callback=callback, mbid=mbid)
 
     def love(self, artist, track, callback=None):
         """
@@ -2172,7 +2172,7 @@ class Track(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'love', auth=True, artist=artist, track=track, callback=callback)
+        return self._call('POST', 'love', auth=True, artist=artist, track=track, callback=callback)
 
     def remove_tag(self, artist, tag, track, callback=None):
         """
@@ -2192,7 +2192,7 @@ class Track(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'removeTag', auth=True, artist=artist, tag=tag, track=track, callback=callback)
+        return self._call('POST', 'removeTag', auth=True, artist=artist, tag=tag, track=track, callback=callback)
 
     def scrobble(self, artist, timestamp, track, album=None, mbid=None, albumArtist=None, context=None, streamId=None, duration=None, trackNumber=None, chosenByUser=None, callback=None):
         """
@@ -2245,7 +2245,7 @@ class Track(Package):
             [i] (Optional) : The track number of the track on the album.
         
         """
-        return self.call('POST', 'scrobble', auth=True, artist=artist, timestamp=timestamp, track=track, album=album, albumArtist=albumArtist, callback=callback, chosenByUser=chosenByUser, context=context, duration=duration, mbid=mbid, streamId=streamId, trackNumber=trackNumber)
+        return self._call('POST', 'scrobble', auth=True, artist=artist, timestamp=timestamp, track=track, album=album, albumArtist=albumArtist, callback=callback, chosenByUser=chosenByUser, context=context, duration=duration, mbid=mbid, streamId=streamId, trackNumber=trackNumber)
 
     def search(self, track, limit=None, page=None, artist=None, callback=None):
         """
@@ -2268,7 +2268,7 @@ class Track(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'search', auth=False, track=track, artist=artist, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'search', auth=False, track=track, artist=artist, callback=callback, limit=limit, page=page)
 
     def share(self, artist, recipient, track, message=None, public=None, callback=None):
         """
@@ -2295,7 +2295,7 @@ class Track(Package):
             Defaults to 0 (false).
         
         """
-        return self.call('POST', 'share', auth=True, artist=artist, recipient=recipient, track=track, callback=callback, message=message, public=public)
+        return self._call('POST', 'share', auth=True, artist=artist, recipient=recipient, track=track, callback=callback, message=message, public=public)
 
     def unban(self, artist, track, callback=None):
         """
@@ -2313,7 +2313,7 @@ class Track(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'unban', auth=True, artist=artist, track=track, callback=callback)
+        return self._call('POST', 'unban', auth=True, artist=artist, track=track, callback=callback)
 
     def unlove(self, artist, track, callback=None):
         """
@@ -2331,7 +2331,7 @@ class Track(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'unlove', auth=True, artist=artist, track=track, callback=callback)
+        return self._call('POST', 'unlove', auth=True, artist=artist, track=track, callback=callback)
 
     def update_now_playing(self, artist, track, album=None, mbid=None, albumArtist=None, context=None, duration=None, trackNumber=None, callback=None):
         """
@@ -2363,7 +2363,7 @@ class Track(Package):
             (Optional) : The track number of the track on the album.
         
         """
-        return self.call('POST', 'updateNowPlaying', auth=True, artist=artist, track=track, album=album, albumArtist=albumArtist, callback=callback, context=context, duration=duration, mbid=mbid, trackNumber=trackNumber)
+        return self._call('POST', 'updateNowPlaying', auth=True, artist=artist, track=track, album=album, albumArtist=albumArtist, callback=callback, context=context, duration=duration, mbid=mbid, trackNumber=trackNumber)
 
 class User(Package):
 
@@ -2391,7 +2391,7 @@ class User(Package):
             (Optional) : An unix timestamp to start at.
         
         """
-        return self.call('GET', 'getArtistTracks', auth=False, artist=artist, user=user, callback=callback, endTimestamp=endTimestamp, page=page, startTimestamp=startTimestamp)
+        return self._call('GET', 'getArtistTracks', auth=False, artist=artist, user=user, callback=callback, endTimestamp=endTimestamp, page=page, startTimestamp=startTimestamp)
 
     def get_banned_tracks(self, user, limit=None, page=None, callback=None):
         """
@@ -2411,7 +2411,7 @@ class User(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getBannedTracks', auth=False, user=user, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getBannedTracks', auth=False, user=user, callback=callback, limit=limit, page=page)
 
     def get_events(self, user, limit=None, festivalsonly=None, page=None, callback=None):
         """
@@ -2436,7 +2436,7 @@ class User(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getEvents', auth=False, user=user, callback=callback, festivalsonly=festivalsonly, limit=limit, page=page)
+        return self._call('GET', 'getEvents', auth=False, user=user, callback=callback, festivalsonly=festivalsonly, limit=limit, page=page)
 
     def get_friends(self, user, limit=None, page=None, recenttracks=None, callback=None):
         """
@@ -2459,7 +2459,7 @@ class User(Package):
             recent listening in the response.
         
         """
-        return self.call('GET', 'getFriends', auth=False, user=user, callback=callback, limit=limit, page=page, recenttracks=recenttracks)
+        return self._call('GET', 'getFriends', auth=False, user=user, callback=callback, limit=limit, page=page, recenttracks=recenttracks)
 
     def get_info(self, user=None, callback=None):
         """
@@ -2476,7 +2476,7 @@ class User(Package):
             user.
         
         """
-        return self.call('GET', 'getInfo', auth=False, callback=callback, user=user)
+        return self._call('GET', 'getInfo', auth=False, callback=callback, user=user)
 
     def get_loved_tracks(self, user, limit=None, page=None, callback=None):
         """
@@ -2496,7 +2496,7 @@ class User(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getLovedTracks', auth=False, user=user, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getLovedTracks', auth=False, user=user, callback=callback, limit=limit, page=page)
 
     def get_neighbours(self, user, limit=None, callback=None):
         """
@@ -2514,7 +2514,7 @@ class User(Package):
             (Optional) : The number of results to fetch per page. Defaults to 50.
         
         """
-        return self.call('GET', 'getNeighbours', auth=False, user=user, callback=callback, limit=limit)
+        return self._call('GET', 'getNeighbours', auth=False, user=user, callback=callback, limit=limit)
 
     def get_new_releases(self, user, userecs=None, callback=None):
         """
@@ -2534,7 +2534,7 @@ class User(Package):
             on their library (the default).
         
         """
-        return self.call('GET', 'getNewReleases', auth=False, user=user, callback=callback, userecs=userecs)
+        return self._call('GET', 'getNewReleases', auth=False, user=user, callback=callback, userecs=userecs)
 
     def get_past_events(self, user, limit=None, page=None, callback=None):
         """
@@ -2554,7 +2554,7 @@ class User(Package):
             (Optional) : The page number to scan to.
         
         """
-        return self.call('GET', 'getPastEvents', auth=False, user=user, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getPastEvents', auth=False, user=user, callback=callback, limit=limit, page=page)
 
     def get_personal_tags(self, tag, taggingtype, user, limit=None, page=None, callback=None):
         """
@@ -2579,7 +2579,7 @@ class User(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getPersonalTags', auth=False, tag=tag, taggingtype=taggingtype, user=user, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getPersonalTags', auth=False, tag=tag, taggingtype=taggingtype, user=user, callback=callback, limit=limit, page=page)
 
     def get_playlists(self, user, callback=None):
         """
@@ -2595,7 +2595,7 @@ class User(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getPlaylists', auth=False, user=user, callback=callback)
+        return self._call('GET', 'getPlaylists', auth=False, user=user, callback=callback)
 
     def get_recent_stations(self, user, limit=None, page=None, callback=None):
         """
@@ -2616,7 +2616,7 @@ class User(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getRecentStations', auth=True, user=user, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getRecentStations', auth=True, user=user, callback=callback, limit=limit, page=page)
 
     def get_recent_tracks(self, user, extended=None, from_=None, to=None, limit=None, page=None, callback=None):
         """
@@ -2651,7 +2651,7 @@ class User(Package):
             00:00:00, January 1st 1970 UTC). This must be in the UTC time zone.
         
         """
-        return self.call('GET', 'getRecentTracks', auth=False, user=user, callback=callback, extended=extended, from_=from_, limit=limit, page=page, to=to)
+        return self._call('GET', 'getRecentTracks', auth=False, user=user, callback=callback, extended=extended, from_=from_, limit=limit, page=page, to=to)
 
     def get_recommended_artists(self, limit=None, page=None, callback=None):
         """
@@ -2669,7 +2669,7 @@ class User(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getRecommendedArtists', auth=True, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getRecommendedArtists', auth=True, callback=callback, limit=limit, page=page)
 
     def get_recommended_events(self, country=None, festivalsonly=None, longitude=None, limit=None, latitude=None, page=None, callback=None):
         """
@@ -2700,7 +2700,7 @@ class User(Package):
             (Optional) : The page number to scan to.
         
         """
-        return self.call('GET', 'getRecommendedEvents', auth=True, callback=callback, country=country, festivalsonly=festivalsonly, latitude=latitude, limit=limit, longitude=longitude, page=page)
+        return self._call('GET', 'getRecommendedEvents', auth=True, callback=callback, country=country, festivalsonly=festivalsonly, latitude=latitude, limit=limit, longitude=longitude, page=page)
 
     def get_shouts(self, user, limit=None, page=None, callback=None):
         """
@@ -2720,7 +2720,7 @@ class User(Package):
             (Optional) : The page number to fetch. Defaults to first page.
         
         """
-        return self.call('GET', 'getShouts', auth=False, user=user, callback=callback, limit=limit, page=page)
+        return self._call('GET', 'getShouts', auth=False, user=user, callback=callback, limit=limit, page=page)
 
     def get_top_albums(self, user, limit=None, page=None, period=None, callback=None):
         """
@@ -2744,7 +2744,7 @@ class User(Package):
             time period over which to retrieve top albums for.
         
         """
-        return self.call('GET', 'getTopAlbums', auth=False, user=user, callback=callback, limit=limit, page=page, period=period)
+        return self._call('GET', 'getTopAlbums', auth=False, user=user, callback=callback, limit=limit, page=page, period=period)
 
     def get_top_artists(self, user, limit=None, page=None, period=None, callback=None):
         """
@@ -2768,7 +2768,7 @@ class User(Package):
             time period over which to retrieve top artists for.
         
         """
-        return self.call('GET', 'getTopArtists', auth=False, user=user, callback=callback, limit=limit, page=page, period=period)
+        return self._call('GET', 'getTopArtists', auth=False, user=user, callback=callback, limit=limit, page=page, period=period)
 
     def get_top_tags(self, user, limit=None, callback=None):
         """
@@ -2786,7 +2786,7 @@ class User(Package):
             (Optional) : Limit the number of tags returned
         
         """
-        return self.call('GET', 'getTopTags', auth=False, user=user, callback=callback, limit=limit)
+        return self._call('GET', 'getTopTags', auth=False, user=user, callback=callback, limit=limit)
 
     def get_top_tracks(self, user, limit=None, page=None, period=None, callback=None):
         """
@@ -2810,7 +2810,7 @@ class User(Package):
             time period over which to retrieve top tracks for.
         
         """
-        return self.call('GET', 'getTopTracks', auth=False, user=user, callback=callback, limit=limit, page=page, period=period)
+        return self._call('GET', 'getTopTracks', auth=False, user=user, callback=callback, limit=limit, page=page, period=period)
 
     def get_weekly_album_chart(self, user, to=None, from_=None, callback=None):
         """
@@ -2834,7 +2834,7 @@ class User(Package):
             User.getChartsList for more.
         
         """
-        return self.call('GET', 'getWeeklyAlbumChart', auth=False, user=user, callback=callback, from_=from_, to=to)
+        return self._call('GET', 'getWeeklyAlbumChart', auth=False, user=user, callback=callback, from_=from_, to=to)
 
     def get_weekly_artist_chart(self, user, to=None, from_=None, callback=None):
         """
@@ -2858,7 +2858,7 @@ class User(Package):
             User.getWeeklyChartList for more.
         
         """
-        return self.call('GET', 'getWeeklyArtistChart', auth=False, user=user, callback=callback, from_=from_, to=to)
+        return self._call('GET', 'getWeeklyArtistChart', auth=False, user=user, callback=callback, from_=from_, to=to)
 
     def get_weekly_chart_list(self, user, callback=None):
         """
@@ -2875,7 +2875,7 @@ class User(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'getWeeklyChartList', auth=False, user=user, callback=callback)
+        return self._call('GET', 'getWeeklyChartList', auth=False, user=user, callback=callback)
 
     def get_weekly_track_chart(self, user, to=None, from_=None, callback=None):
         """
@@ -2899,7 +2899,7 @@ class User(Package):
             User.getWeeklyChartList for more.
         
         """
-        return self.call('GET', 'getWeeklyTrackChart', auth=False, user=user, callback=callback, from_=from_, to=to)
+        return self._call('GET', 'getWeeklyTrackChart', auth=False, user=user, callback=callback, from_=from_, to=to)
 
     def shout(self, message, user, callback=None):
         """
@@ -2917,7 +2917,7 @@ class User(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('POST', 'shout', auth=True, message=message, user=user, callback=callback)
+        return self._call('POST', 'shout', auth=True, message=message, user=user, callback=callback)
 
     def sign_up(self, callback=None):
         """
@@ -2930,7 +2930,7 @@ class User(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'signUp', auth=True, callback=callback)
+        return self._call('GET', 'signUp', auth=True, callback=callback)
 
     def terms(self, callback=None):
         """
@@ -2943,7 +2943,7 @@ class User(Package):
             Callback function (only when using the async client).
         
         """
-        return self.call('GET', 'terms', auth=True, callback=callback)
+        return self._call('GET', 'terms', auth=True, callback=callback)
 
 class Venue(Package):
 
@@ -2965,7 +2965,7 @@ class Venue(Package):
             events.
         
         """
-        return self.call('GET', 'getEvents', auth=False, venue=venue, callback=callback, festivalsonly=festivalsonly)
+        return self._call('GET', 'getEvents', auth=False, venue=venue, callback=callback, festivalsonly=festivalsonly)
 
     def get_past_events(self, venue, limit=None, festivalsonly=None, page=None, callback=None):
         """
@@ -2989,7 +2989,7 @@ class Venue(Package):
             (Optional) :The page of results to return.
         
         """
-        return self.call('GET', 'getPastEvents', auth=False, venue=venue, callback=callback, festivalsonly=festivalsonly, limit=limit, page=page)
+        return self._call('GET', 'getPastEvents', auth=False, venue=venue, callback=callback, festivalsonly=festivalsonly, limit=limit, page=page)
 
     def search(self, venue, country=None, limit=None, page=None, callback=None):
         """
@@ -3012,6 +3012,6 @@ class Venue(Package):
             (Optional) : The results page you would like to fetch
         
         """
-        return self.call('GET', 'search', auth=False, venue=venue, callback=callback, country=country, limit=limit, page=page)
+        return self._call('GET', 'search', auth=False, venue=venue, callback=callback, country=country, limit=limit, page=page)
 
 

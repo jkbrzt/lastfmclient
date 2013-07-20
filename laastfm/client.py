@@ -79,7 +79,7 @@ class LastfmClient(BaseClient):
                 'requests` for LastfmClient to work.'
             )
         params = self._get_params(method, params, auth)
-        data = requests.request(http_method, API_URL, params=params).json
+        data = requests.request(http_method, API_URL, params=params).json()
         return self._process_response_data(data)
 
     def _get_params(self, method, params, auth):
