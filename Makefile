@@ -4,4 +4,4 @@ spec:
 	./generate.py spec > api.json
 
 code:
-	./generate.py code > laastfm/api.py
+	./generate.py code > lastfmclient/api.py

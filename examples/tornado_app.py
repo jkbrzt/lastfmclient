@@ -5,7 +5,7 @@ import tornado.web
 import tornado.gen
 import tornado.ioloop
 
-from laastfm import AsyncLastfmClient
+from lastfmclient import AsyncLastfmClient
 
 
 class settings:

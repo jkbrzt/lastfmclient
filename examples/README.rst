@@ -1,4 +1,4 @@
-``laastfm`` examples
+``lastfmclient`` examples
 ====================
 
 Get an API key and secret here: http://www.last.fm/api/account/create
