@@ -36,22 +36,29 @@ Asynchronous (uses ``tornado.httpclient.AsyncHTTPClient``)
 
 .. code-block:: python
 
+    import tornado.web
+    import tornado.gen
     from lastfmclient.async import AsyncLastfmClient
 
-    api = AsyncLastfmClient(
-        api_key=KEY,
-        api_secret=SECRET,
-        session_key=session_key
-    )
+    class Scrobbler(tornado.web.RequestHandler):
 
-    resp = yield api.track.update_now_playing(
-        track='Paranoid Android',
-        artist='Radiohead',
-        album='OK Computer',
-    )
-    print resp
+        @tornado.gen.coroutine
+        def post(self):
+            api = AsyncLastfmClient(
+                api_key=KEY,
+                api_secret=SECRET,
+                session_key=session_key
+            )
 
-See also `examples <https://github.com/jkbr/lastfmclient/tree/master/examples>`_.
+            resp = yield api.track.update_now_playing(
+                track='Paranoid Android',
+                artist='Radiohead',
+                album='OK Computer',
+            )
+            self.finish(resp)
+
+
+See also `examples <https://github.com/jakubroztocil/lastfmclient/tree/master/examples>`_.
 
 
 Client methods
@@ -77,3 +84,14 @@ The defined methods be updated to the current version of the documentation via:
 
     # Or, all the above in one step:
     $ make
+
+
+Contact
+=======
+
+Jakub Roztočil
+
+* http://github.com/jakubroztocil
+* http://twitter.com/jakubroztocil
+* jakub@subtleapps.com
+

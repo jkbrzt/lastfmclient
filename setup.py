@@ -11,8 +11,8 @@ setup(
     long_description=codecs.open('README.rst', encoding='utf8').read(),
     author_email=lastfmclient.__email__,
     license=lastfmclient.__licence__,
-    url='https://github.com/jkbr/lastfmclient',
-    download_url='https://github.com/jkbr/lastfmclient',
+    url='https://github.com/jakubroztocil/lastfmclient',
+    download_url='https://github.com/jakubroztocil/lastfmclient',
     packages=['lastfmclient'],
     install_requires=[
         'requests>=1.0.4'

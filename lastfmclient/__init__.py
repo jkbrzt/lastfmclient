@@ -6,7 +6,7 @@ including auth, etc. An async, Tornado-based client included as well.
 from .client import LastfmClient
 
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 __author__ = 'Jakub Roztocil'
 __email__ = 'BSD'
 __licence__ = 'BSD'
