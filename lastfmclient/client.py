@@ -1,14 +1,7 @@
-import json
 from hashlib import md5
-from urllib import urlencode
 
 from .api import BaseClient
 from .exceptions import EXCEPTIONS_BY_CODE
-
-try:
-    from tornado.httpclient import AsyncHTTPClient
-except ImportError:
-    AsyncHTTPClient = None
 
 
 API_URL = 'http://ws.audioscrobbler.com/2.0/'
@@ -139,44 +132,3 @@ class LastfmClient(BaseClient):
 
         return data
 
-
-class AsyncLastfmClient(LastfmClient):
-    """
-    Non-blocking Last.fm API client for Tornado.
-
-    Uses ``tornado.httpclient.AsyncHTTPClient`` to perform HTTP requests.
-
-    """
-    def __init__(self, api_key=None, api_secret=None, session_key=None):
-        super(AsyncLastfmClient, self).__init__(
-            api_key, api_secret, session_key)
-        if not AsyncHTTPClient:
-            raise RuntimeError(
-                'You need to install Tornado to be able use the async client.')
-        self._async_client = AsyncHTTPClient()
-
-    def call(self, http_method, method, auth, params):
-
-        url = API_URL
-
-        callback = params.pop('callback')
-        params = self._get_params(method, params, auth)
-        params = urlencode({k: unicode(v).encode('utf8')
-                            for k, v in params.items()})
-        if http_method == 'POST':
-            body = params
-        else:
-            body = None
-            url = url + '?' + params
-
-        def on_finish(response):
-            data = self._process_response_data(json.loads(response.body))
-            if callback:
-                callback(data)
-
-        self._async_client.fetch(
-            url,
-            method=http_method,
-            body=body,
-            callback=on_finish
-        )

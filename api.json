@@ -1,5 +1,5 @@
 {
-    "__generated__": "2013-07-20T15:46:24.628886Z", 
+    "__generated__": "2014-06-06T16:22:22.687901Z", 
     "album": {
         "addTags": {
             "auth": true, 
@@ -821,7 +821,7 @@
     "auth": {
         "getMobileSession": {
             "auth": false, 
-            "description": "Create a web service session for a user. Used for authenticating a user when the password can be inputted by the user. Only suitable for standalone mobile devices. See the authentication how-to for more. You must use HTTPS and POST in order to use this method.", 
+            "description": "Create a web service session for a user. Used for authenticating a user when the password can be inputted by the user. Accepts email address as well, so please use the username supplied in the output. Only suitable for standalone mobile devices. See the authentication how-to for more. You must use HTTPS and POST in order to use this method.", 
             "documentation": "http://www.last.fm/api/show/auth.getMobileSession", 
             "http": "GET", 
             "params": {
@@ -833,7 +833,7 @@
                 }, 
                 "username": {
                     "boolean": false, 
-                    "description": "(Required) : The last.fm username.", 
+                    "description": "(Required) : The last.fm username or email address.", 
                     "multiple": false, 
                     "required": true
                 }
@@ -1947,7 +1947,7 @@
     }, 
     "radio": {
         "getPlaylist": {
-            "auth": true, 
+            "auth": false, 
             "description": "Fetch new radio content periodically in an XSPF format.", 
             "documentation": "http://www.last.fm/api/show/radio.getPlaylist", 
             "http": "GET", 
@@ -1999,10 +1999,10 @@
             }
         }, 
         "tune": {
-            "auth": true, 
+            "auth": false, 
             "description": "Tune in to a Last.fm radio station.", 
             "documentation": "http://www.last.fm/api/show/radio.tune", 
-            "http": "POST", 
+            "http": "GET", 
             "params": {
                 "lang": {
                     "boolean": false, 

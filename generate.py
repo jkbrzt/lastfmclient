@@ -174,13 +174,6 @@ def args_doc_call(method_name, spec):
     safe = {name: make_safe(name) for name in params}
     required = [safe[name] for name in params if params[name]['required']]
     optional = [safe[name] for name in params if not params[name]['required']]
-    optional.append('callback')
-    params['callback'] = {
-        'required': False,
-        'description': 'Callback function (only when using the async client).',
-        'multiple': False,
-        'boolean': False,
-    }
 
     params = sorted(required)
     for name in optional:

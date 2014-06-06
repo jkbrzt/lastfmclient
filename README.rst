@@ -36,10 +36,7 @@ Asynchronous (uses ``tornado.httpclient.AsyncHTTPClient``)
 
 .. code-block:: python
 
-    from lastfmclient import AsyncLastfmClient
-
-    def callback(resp):
-        print resp
+    from lastfmclient.async import AsyncLastfmClient
 
     api = AsyncLastfmClient(
         api_key=KEY,
@@ -47,12 +44,12 @@ Asynchronous (uses ``tornado.httpclient.AsyncHTTPClient``)
         session_key=session_key
     )
 
-    api.track.update_now_playing(
+    resp = yield api.track.update_now_playing(
         track='Paranoid Android',
         artist='Radiohead',
         album='OK Computer',
-        callback=callback,
     )
+    print resp
 
 See also `examples <https://github.com/jkbr/lastfmclient/tree/master/examples>`_.
 
