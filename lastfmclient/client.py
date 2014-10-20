@@ -87,7 +87,7 @@ class LastfmClient(BaseClient):
         }
 
         params.update(defaults)
-        params = {k: v for k, v in params.items()
+        params = {k.rstrip('_'): v for k, v in params.items()
                   if v is not None and k != 'callback'}
 
         getting_session = method == 'auth.getSession'
