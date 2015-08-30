@@ -91,7 +91,6 @@ Contact
 
 Jakub Roztočil
 
-* http://github.com/jakubroztocil
-* http://twitter.com/jakubroztocil
-* jakub@subtleapps.com
+* http://github.com/jkbrzt
+* http://twitter.com/jkbrzt
 
