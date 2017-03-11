@@ -91,6 +91,7 @@ Contact
 
 Jakub Roztočil
 
-* http://github.com/jkbrzt
-* http://twitter.com/jkbrzt
+* https://github.com/jakubroztocil
+* https://twitter.com/jakubroztocil
+* https://roztocil.co
 
